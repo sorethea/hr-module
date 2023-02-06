@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
-
+            $table->string("name")->unique();
+            $table->string("abbr")->unique();
+            $table->string("domain")->nullable();
+            $table->boolean("is_group")->default(false);
+            $table->text("description")->nullable();
+            $table->foreignId("parent_id")->nullable();
             $table->timestamps();
         });
     }

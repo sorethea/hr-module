@@ -31,7 +31,33 @@ class CompanyResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\Card::make([
+                    Forms\Components\TextInput::make("name")
+                        ->unique("companies","name",fn($record)=>$record)
+                        ->required(),
+                    Forms\Components\TextInput::make("abbr")
+                        ->unique("companies","abbr",fn($record)=>$record)
+                        ->required(),
+                    Forms\Components\Toggle::make("is_group"),
+                    Forms\Components\BelongsToSelect::make("parent")
+                        ->relationship("parent","name")
+                        ->createOptionForm([
+                            Forms\Components\TextInput::make("name")
+                                ->unique("companies","name",fn($record)=>$record)
+                                ->required(),
+                            Forms\Components\TextInput::make("abbr")
+                                ->unique("companies","abbr",fn($record)=>$record)
+                                ->required(),
+                        ])
+                        ->nullable(),
+                    Forms\Components\TextInput::make("domain")
+                        ->columnSpan(2)
+                        ->nullable(),
+                    Forms\Components\MarkdownEditor::make("description")
+                        ->columnSpan(2)
+                        ->nullable(),
+                ])->columns(2),
+
             ]);
     }
 
@@ -51,14 +77,14 @@ class CompanyResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -66,5 +92,5 @@ class CompanyResource extends Resource
             'create' => Pages\CreateCompany::route('/create'),
             'edit' => Pages\EditCompany::route('/{record}/edit'),
         ];
-    }    
+    }
 }
