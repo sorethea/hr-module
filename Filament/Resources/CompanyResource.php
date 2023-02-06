@@ -38,7 +38,6 @@ class CompanyResource extends Resource
                     Forms\Components\TextInput::make("abbr")
                         ->unique("companies","abbr",fn($record)=>$record)
                         ->required(),
-                    Forms\Components\Toggle::make("is_group"),
                     Forms\Components\BelongsToSelect::make("parent")
                         ->relationship("parent","name")
                         ->createOptionForm([
@@ -51,8 +50,8 @@ class CompanyResource extends Resource
                         ])
                         ->nullable(),
                     Forms\Components\TextInput::make("domain")
-                        ->columnSpan(2)
                         ->nullable(),
+                    Forms\Components\Toggle::make("is_group"),
                     Forms\Components\MarkdownEditor::make("description")
                         ->columnSpan(2)
                         ->nullable(),
