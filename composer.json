@@ -1,0 +1,26 @@
+{
+    "name": "sorethea/hr-module",
+    "description": "",
+    "type": "laravel-module",
+    "authors": [
+        {
+            "name": "Sorethea OK",
+            "email": "sorethea@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\HR\\Providers\\HRServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\HR\\": ""
+        }
+    }
+}
