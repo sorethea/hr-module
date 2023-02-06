@@ -5,6 +5,7 @@ namespace Modules\HR\Providers;
 use Filament\Facades\Filament;
 use Filament\Navigation\NavigationGroup;
 use Filament\PluginServiceProvider;
+use Modules\HR\Filament\Resources\CompanyResource;
 use Modules\HR\Filament\Resources\EmployeeResource;
 use Spatie\LaravelPackageTools\Package;
 use Modules\HR\Filament\Pages\HRPage;
@@ -17,6 +18,7 @@ class FilamentServiceProvider extends PluginServiceProvider
     }
     protected array $pages = [];
     protected array $resources =[
+        CompanyResource::class,
         EmployeeResource::class,
     ];
     public function configurePackage(Package $package): void
