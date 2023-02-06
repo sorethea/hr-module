@@ -4,7 +4,7 @@ return [
     'name' => 'HR',
     'models'=>[
         'Company'=>[
-            'icon'=>'heroicon-o-building'
+            'icon'=>'heroicon-o-library'
         ],
         'Employee'=>[
             'icon'=>'heroicon-o-user-group'
