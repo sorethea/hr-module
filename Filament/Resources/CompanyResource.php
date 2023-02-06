@@ -41,16 +41,15 @@ class CompanyResource extends Resource
                     Forms\Components\BelongsToSelect::make("parent")
                         ->relationship("parent","name")
                         ->createOptionForm([
-//                            Forms\Components\Card::make([
-//
-//                            ])->columns(2),
-                            Forms\Components\TextInput::make("name")
-                                ->unique("companies","name",fn($record)=>$record)
-                                ->required(),
-                            Forms\Components\TextInput::make("abbr")
-                                ->unique("companies","abbr",fn($record)=>$record)
-                                ->required(),
-                        ])->columns(2)
+                            Forms\Components\Group::make([
+                                Forms\Components\TextInput::make("name")
+                                    ->unique("companies","name",fn($record)=>$record)
+                                    ->required(),
+                                Forms\Components\TextInput::make("abbr")
+                                    ->unique("companies","abbr",fn($record)=>$record)
+                                    ->required(),
+                            ])->columns(2),
+                        ])
                         ->nullable(),
                     Forms\Components\TextInput::make("domain")
                         ->nullable(),
