@@ -2,8 +2,8 @@
 
 namespace Modules\HR\Filament\Resources;
 
+use Modules\Core\Filament\Resources\UserResource\RelationManagers\AddressesRelationManager;
 use Modules\HR\Filament\Resources\CompanyResource\Pages;
-use Modules\HR\Filament\Resources\CompanyResource\RelationManagers;
 use Modules\HR\Models\Company;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -94,7 +94,7 @@ class CompanyResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            AddressesRelationManager::class,
         ];
     }
 
