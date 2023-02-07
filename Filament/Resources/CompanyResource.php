@@ -50,10 +50,11 @@ class CompanyResource extends Resource
                                     ->required(),
                             ])->columns(2),
                         ])->createOptionAction(function ($record){
-                            if(!empty($record)){
-                                $record->is_group = true;
-                                $record->save();
-                            }
+                            dd($record);
+//                            if(!empty($record)){
+//                                $record->is_group = true;
+//                                $record->save();
+//                            }
                         })
                         ->nullable(),
                     Forms\Components\TextInput::make("domain")
