@@ -48,15 +48,10 @@ class CompanyResource extends Resource
                                 Forms\Components\TextInput::make("abbr")
                                     ->unique("companies","abbr",fn($record)=>$record)
                                     ->required(),
+                                Forms\Components\Hidden::make("is_group")
+                                    ->default(true),
                             ])->columns(2),
-                        ])->createOptionAction(function ($record){
-
-                            if(!empty($record)){
-                                dd($record);
-                                $record->is_group = true;
-                                $record->save();
-                            }
-                        })
+                        ])
                         ->nullable(),
                     Forms\Components\TextInput::make("domain")
                         ->nullable(),
