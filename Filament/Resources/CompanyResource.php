@@ -50,8 +50,10 @@ class CompanyResource extends Resource
                                     ->required(),
                             ])->columns(2),
                         ])->afterStateHydrated(function ($record){
-                            $record->is_group=true;
-                            $record->save();
+                            if(!empty($record)){
+                                $record->is_group=true;
+                                $record->save();
+                            }
                         })
                         ->nullable(),
                     Forms\Components\TextInput::make("domain")
