@@ -48,7 +48,12 @@ class CompanyResource extends Resource
                                 Forms\Components\TextInput::make("abbr")
                                     ->unique("companies","abbr",fn($record)=>$record)
                                     ->required(),
-                            ])->columns(2),
+                            ])
+                                ->afterStateHydrated(function ($record):void{
+                                    $record->is_group=true;
+                                    $record->save();
+                                })
+                                ->columns(2),
                         ])
                         ->nullable(),
                     Forms\Components\TextInput::make("domain")
