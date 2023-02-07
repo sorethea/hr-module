@@ -10,7 +10,14 @@ class Company extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $fillable = [
+        "name",
+        "abbr",
+        "domain",
+        "description",
+        "is_group",
+        "parent_id",
+    ];
 
     protected static function newFactory()
     {
