@@ -66,7 +66,10 @@ class CompanyResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make("name")->searchable(),
+                Tables\Columns\TextColumn::make("abbr")->searchable(),
+                Tables\Columns\TextColumn::make("domain")->searchable(),
+                Tables\Columns\TextColumn::make("parent.name")->searchable(),
             ])
             ->filters([
                 //
