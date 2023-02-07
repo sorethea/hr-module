@@ -49,9 +49,9 @@ class CompanyResource extends Resource
                                     ->unique("companies","abbr",fn($record)=>$record)
                                     ->required(),
                             ])->columns(2),
-                        ])->afterStateHydrated(function ($record){
+                        ])->createOptionAction(function ($record){
                             if(!empty($record)){
-                                $record->is_group=true;
+                                $record->is_group = true;
                                 $record->save();
                             }
                         })
