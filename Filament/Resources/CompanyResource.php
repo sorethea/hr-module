@@ -39,7 +39,7 @@ class CompanyResource extends Resource
                         ->unique("companies","abbr",fn($record)=>$record)
                         ->required(),
                     Forms\Components\BelongsToSelect::make("parent")
-                        ->relationship("parent","name")
+                        ->relationship("parent","name",fn($query)=>$query->where("is_group",true))
                         ->createOptionForm([
                             Forms\Components\Group::make([
                                 Forms\Components\TextInput::make("name")
