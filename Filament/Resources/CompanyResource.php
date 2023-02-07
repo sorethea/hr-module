@@ -75,6 +75,7 @@ class CompanyResource extends Resource
                 Tables\Columns\TextColumn::make("abbr")->searchable(),
                 Tables\Columns\TextColumn::make("domain")->searchable(),
                 Tables\Columns\TextColumn::make("parent.name")->searchable(),
+                Tables\Columns\BooleanColumn::make("is_group"),
             ])
             ->filters([
                 //
