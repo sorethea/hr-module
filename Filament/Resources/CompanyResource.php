@@ -56,6 +56,8 @@ class CompanyResource extends Resource
                     Forms\Components\TextInput::make("domain")
                         ->nullable(),
                     Forms\Components\Toggle::make("is_group"),
+                    Forms\Components\SpatieMediaLibraryFileUpload::make("logo")
+                        ->collection("logo"),
                     Forms\Components\MarkdownEditor::make("description")
                         ->columnSpan(2)
                         ->nullable(),
@@ -68,6 +70,10 @@ class CompanyResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\SpatieMediaLibraryImageColumn::make("logo")
+                    ->collection("logo")
+                    ->conversion("thumb")
+                    ->rounded(),
                 Tables\Columns\TextColumn::make("name")->searchable(),
                 Tables\Columns\TextColumn::make("abbr")->searchable(),
                 Tables\Columns\TextColumn::make("domain")->searchable(),
