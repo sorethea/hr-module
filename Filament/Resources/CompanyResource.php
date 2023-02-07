@@ -49,10 +49,7 @@ class CompanyResource extends Resource
                                     ->unique("companies","abbr",fn($record)=>$record)
                                     ->required(),
                             ])
-                                ->afterStateHydrated(function ($record):void{
-                                    $record->is_group=true;
-                                    $record->save();
-                                })
+                                ->mutateRelationshipDataBeforeSave(["is_group"=>true])
                                 ->columns(2),
                         ])
                         ->nullable(),
