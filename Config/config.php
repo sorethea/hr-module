@@ -2,7 +2,7 @@
 
 return [
     'name' => 'HR',
-    'sitting'=>[
+    'setting'=>[
         'label'=>'Settings',
         'icon'=>'heroicon-o-cog'
     ],
