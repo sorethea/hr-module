@@ -55,6 +55,11 @@ class EmployeeResource extends Resource
                         ->required(),
                     Forms\Components\Select::make("gender")
                         ->options(app(HRSetting::class)->gender)
+                        ->required(),
+                    Forms\Components\DatePicker::make("date_of_birth")
+                        ->required(),
+                    Forms\Components\DatePicker::make("date_of_joining")
+                        ->required(),
                 ])->columns(2),
             ]);
     }
