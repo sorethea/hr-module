@@ -10,7 +10,7 @@ class CreateHRSetting extends SettingsMigration
             "male"=>"Male",
             "female"=>"Female"
         ]);
-        $this->migrator->add("hr.employee_type",[
+        $this->migrator->add("hr.employment_type",[
             "contract"=>"Contract",
             "full-time"=>"Full Time",
             "part-time"=>"Part Time",
