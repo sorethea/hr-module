@@ -34,9 +34,7 @@ class HRSettingPage extends SettingsPage
     protected function getFormSchema(): array
     {
         return [
-            Card::make([
-                KeyValue::make("gender"),
-            ])
+            KeyValue::make("gender"),
         ];
     }
 }
