@@ -41,6 +41,8 @@ class EmployeeResource extends Resource
                     Forms\Components\Toggle::make("is_system_user")
                         ->reactive()
                         ->default(false),
+                    Forms\Components\Toggle::make("active")
+                        ->default(true),
                     Forms\Components\TextInput::make("email")
                         ->visible(fn(\Closure $get)=>$get("is_system_user"))
                         ->required(),
