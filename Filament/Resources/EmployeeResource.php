@@ -39,7 +39,7 @@ class EmployeeResource extends Resource
                     Forms\Components\Toggle::make("is_system_user")
                         ->default(false),
                     Forms\Components\TextInput::make("email")
-                        ->visible(fn(\Closure $get)=>$get('is_system_user'))
+                        ->visible(fn(\Closure $get)=>$get('is_system_user')==true)
                         ->required(),
                 ])->columns(2),
             ]);
