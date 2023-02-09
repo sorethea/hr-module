@@ -35,8 +35,10 @@ class EmployeeResource extends Resource
             ->schema([
                 Forms\Components\Card::make([
                     Forms\Components\TextInput::make("first_name")
+                        ->reactive()
                         ->required(),
                     Forms\Components\TextInput::make("last_name")
+                        ->reactive()
                         ->required(),
                     Forms\Components\Toggle::make("is_system_user")
                         ->reactive()
