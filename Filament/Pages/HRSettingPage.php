@@ -4,6 +4,8 @@ namespace Modules\HR\Filament\Pages;
 
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\KeyValue;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\TextInput;
 use Filament\Pages\SettingsPage;
 use Modules\HR\Settings\HRSetting;
 
@@ -35,7 +37,10 @@ class HRSettingPage extends SettingsPage
     {
         return [
             Card::make([
-                KeyValue::make("gender"),
+                Repeater::make("gender")->schema([
+                    TextInput::make("label")->required(),
+                    TextInput::make("value")->required(),
+                ]),
             ])
         ];
     }
