@@ -2,6 +2,10 @@
 
 return [
     'name' => 'HR',
+    'sitting'=>[
+        'label'=>'Settings',
+        'icon'=>'heroicon-o-cog'
+    ],
     'models'=>[
         'Company'=>[
             'icon'=>'heroicon-o-library'
