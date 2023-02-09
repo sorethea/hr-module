@@ -37,10 +37,7 @@ class HRSettingPage extends SettingsPage
     {
         return [
             Card::make([
-                Repeater::make("gender")->schema([
-                    TextInput::make("label")->required(),
-                    TextInput::make("value")->required(),
-                ]),
+                KeyValue::make("gender"),
             ])
         ];
     }
