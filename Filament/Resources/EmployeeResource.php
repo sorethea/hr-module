@@ -40,6 +40,21 @@ class EmployeeResource extends Resource
                         ->required(),
                     Forms\Components\BelongsToSelect::make("company")
                         ->relationship("company", "name")
+                        ->createOptionForm([
+                            Forms\Components\Group::make([
+                                Forms\Components\TextInput::make("name")
+                                    ->unique("companies","name",fn($record)=>$record)
+                                    ->required(),
+                                Forms\Components\TextInput::make("abbr")
+                                    ->unique("companies","abbr",fn($record)=>$record)
+                                    ->required(),
+                                Forms\Components\BelongsToSelect::make("parent")
+                                    ->relationship("parent","name",fn($query)=>$query->where("is_group",true))
+                                    ->nullable(),
+                                Forms\Components\Toggle::make("is_group")
+                                    ->default(false),
+                            ])->columns(2),
+                        ])
                         ->required(),
                     Forms\Components\Toggle::make("is_system_user")
                         ->reactive()
