@@ -36,6 +36,10 @@ class EmployeeResource extends Resource
                         ->required(),
                     Forms\Components\TextInput::make("last_name")
                         ->required(),
+                    Forms\Components\Toggle::make("is_system_user")
+                        ->default(false),
+                    Forms\Components\TextInput::make("email")
+                        ->hidden(fn(\Closure $get)=>!$get('is_system_user'))
                 ])->columns(2),
             ]);
     }

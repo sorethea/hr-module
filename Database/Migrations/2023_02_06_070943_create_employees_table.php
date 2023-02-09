@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string("last_name");
             $table->string("gender");
             $table->string("employment_type")->nullable();
+            $table->boolean('is_system_user')->default(false);
+            $table->string('email')->unique()->nullable();
             $table->foreignId("user_id")->nullable();
             $table->date("date_of_birth");
             $table->text("properties")->nullable();
