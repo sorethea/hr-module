@@ -12,6 +12,8 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Modules\HR\Settings\HRSetting;
+use Spatie\LaravelSettings\Settings;
 
 class EmployeeResource extends Resource
 {
@@ -51,7 +53,8 @@ class EmployeeResource extends Resource
                         ->password()
                         ->visible(fn(\Closure $get)=>$get("is_system_user"))
                         ->required(),
-
+                    Forms\Components\Select::make("gender")
+                        ->options(app(HRSetting::class)->gender)
                 ])->columns(2),
             ]);
     }
