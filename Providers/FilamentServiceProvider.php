@@ -5,6 +5,7 @@ namespace Modules\HR\Providers;
 use Filament\Facades\Filament;
 use Filament\Navigation\NavigationGroup;
 use Filament\PluginServiceProvider;
+use Modules\HR\Filament\Pages\HRSettingPage;
 use Modules\HR\Filament\Resources\CompanyResource;
 use Modules\HR\Filament\Resources\EmployeeResource;
 use Spatie\LaravelPackageTools\Package;
@@ -16,7 +17,9 @@ class FilamentServiceProvider extends PluginServiceProvider
         $module = \Module::find('hr');
         return $module->isEnabled();
     }
-    protected array $pages = [];
+    protected array $pages = [
+        HRSettingPage::class,
+    ];
     protected array $resources =[
         CompanyResource::class,
         EmployeeResource::class,
