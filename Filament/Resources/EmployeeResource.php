@@ -38,6 +38,9 @@ class EmployeeResource extends Resource
                         ->required(),
                     Forms\Components\TextInput::make("last_name")
                         ->required(),
+                    Forms\Components\BelongsToSelect::make("company")
+                        ->relationship("company", "name")
+                        ->required(),
                     Forms\Components\Toggle::make("is_system_user")
                         ->reactive()
                         ->default(false),

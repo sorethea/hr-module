@@ -21,9 +21,10 @@ return new class extends Migration
             $table->string("gender");
             $table->string("employment_type")->nullable();
             $table->boolean('is_system_user')->default(false);
-            $table->string('email')->unique()->nullable();
+            //$table->string('email')->unique()->nullable();
             $table->foreignId("user_id")->nullable();
             $table->date("date_of_birth");
+            $table->date("date_of_joining");
             $table->text("properties")->nullable();
             $table->boolean("active")->default(true);
             $table->timestamps();
