@@ -54,15 +54,17 @@ class EmployeeResource extends Resource
                         ->password()
                         ->visible(fn(\Closure $get)=>$get("is_system_user"))
                         ->required(),
-                    Forms\Components\Toggle::make("active")
-                        ->default(true),
                     Forms\Components\Select::make("gender")
                         ->options(app(HRSetting::class)->gender)
                         ->required(),
+                    Forms\Components\Select::make("employment_type")
+                        ->options(app(HRSetting::class)->employment_type),
                     Forms\Components\DatePicker::make("date_of_birth")
                         ->required(),
                     Forms\Components\DatePicker::make("date_of_joining")
                         ->required(),
+                    Forms\Components\Toggle::make("active")
+                        ->default(true),
                 ])->columns(2),
             ]);
     }
