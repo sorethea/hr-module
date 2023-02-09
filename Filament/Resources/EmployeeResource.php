@@ -37,7 +37,7 @@ class EmployeeResource extends Resource
                     Forms\Components\TextInput::make("last_name")
                         ->required(),
                     Forms\Components\Toggle::make("is_system_user")
-                        ->default(false),
+                        ->default(true),
                     Forms\Components\TextInput::make("email")
                         ->visible(fn(\Closure $get)=>$get('is_system_user')==true)
                         ->required(),
