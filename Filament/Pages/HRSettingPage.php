@@ -35,7 +35,7 @@ class HRSettingPage extends SettingsPage
     {
         return [
             Card::make([
-                KeyValue::make("settings.hr.gender"),
+                KeyValue::make("gender"),
             ])
         ];
     }
