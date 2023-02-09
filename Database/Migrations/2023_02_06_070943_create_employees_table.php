@@ -16,8 +16,11 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->foreignId("company_id");
-            $table->foreignId("user_id");
+            $table->string("first_name");
+            $table->string("last_name");
             $table->string("gender");
+            $table->string("employee_type")->nullable();
+            $table->foreignId("user_id")->nullable();
             $table->date("date_of_birth");
             $table->text("properties")->nullable();
             $table->boolean("active")->default(true);
