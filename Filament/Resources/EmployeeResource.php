@@ -31,7 +31,12 @@ class EmployeeResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\Card::make([
+                    Forms\Components\TextInput::make("first_name")
+                        ->required(),
+                    Forms\Components\TextInput::make("last_name")
+                        ->required(),
+                ])->columns(2),
             ]);
     }
 
@@ -51,14 +56,14 @@ class EmployeeResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -66,5 +71,5 @@ class EmployeeResource extends Resource
             'create' => Pages\CreateEmployee::route('/create'),
             'edit' => Pages\EditEmployee::route('/{record}/edit'),
         ];
-    }    
+    }
 }
