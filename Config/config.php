@@ -3,7 +3,7 @@
 return [
     'name' => 'HR',
     'setting'=>[
-        'label'=>'Settings',
+        'label'=>'HR Settings',
         'icon'=>'heroicon-o-cog'
     ],
     'models'=>[

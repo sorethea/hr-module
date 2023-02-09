@@ -17,6 +17,11 @@ class HRSettingPage extends SettingsPage
         return config('hr.setting.icon');
     }
 
+    protected static function getNavigationLabel(): string
+    {
+        return config('hr.setting.label');
+    }
+
     protected static function getNavigationGroup(): ?string
     {
         return config('hr.navigation.name');
