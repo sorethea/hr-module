@@ -66,11 +66,11 @@ class EmployeeResource extends Resource
                     Forms\Components\TextInput::make("password")
                         ->password()
                         ->required()
-                        ->visible(fn(\Closure $get)=>$get("is_system_user"))
+                        ->visible(fn($record,\Closure $get)=>$get("is_system_user") && !$record)
                         ->same("password_confirmation"),
                     Forms\Components\TextInput::make("password_confirmation")
                         ->password()
-                        ->visible(fn(\Closure $get)=>$get("is_system_user"))
+                        ->visible(fn($record,\Closure $get)=>$get("is_system_user") && !$record)
                         ->required(),
                     Forms\Components\Select::make("gender")
                         ->options(app(HRSetting::class)->gender)
