@@ -45,7 +45,7 @@ class Employee extends Model
     ];
 
     protected $casts = [
-        "properties" => "encrypted:array"
+        "properties" => "encrypted:json"
     ];
 
     protected static function newFactory()
