@@ -19,8 +19,10 @@ class CreateEmployee extends CreateRecord
                 ->firstOrCreate([
                     "name" => $name,
                     "email" => $data["email"],
-                    "password" => \Hash::make($data['password']),
+                    //"password" => \Hash::make($data['password']),
                 ]);
+            //$user->password = \Hash::make($data["password"]);
+            //$user->save();
             $data["user_id"] = $user->id;
         }
         return $data;
