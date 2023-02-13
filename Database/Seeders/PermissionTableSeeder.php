@@ -63,6 +63,9 @@ class PermissionTableSeeder extends Seeder
         Employee::create([
             "first_name"=>"Employee",
             "last_name"=>"Demo",
+            "gender"=>"male",
+            "date_of_birth"=>"2000-01-01",
+            "date_of_joining"=>"2020-01-01",
             "company_id"=>$company->id,
             "user_id"=>$user->id,
             "properties"=>[
