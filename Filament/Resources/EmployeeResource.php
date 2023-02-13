@@ -62,7 +62,7 @@ class EmployeeResource extends Resource
                         ->default(false),
                     Forms\Components\TextInput::make("email")
                         ->visible(fn(\Closure $get)=>$get("email"))
-                        ->hidden(fn($record)=>$record)
+                        ->hidden(fn($record)=>$record->user)
                         ->required(),
                     Forms\Components\TextInput::make("password")
                         ->password()
