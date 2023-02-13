@@ -57,6 +57,7 @@ class EmployeeResource extends Resource
                             ])->columns(2),
                         ])
                         ->required(),
+                    Forms\Components\Hidden::make("user_id"),
                     Forms\Components\Toggle::make("is_system_user")
                         ->reactive()
                         ->default(false),

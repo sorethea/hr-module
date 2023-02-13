@@ -11,24 +11,24 @@ class Employee extends Model
 {
     use HasFactory;
 
-    protected static function booted()
-    {
-        static::saved(function ($model){
-            if(!empty($model->properties)){
-                $email = $model->properties['email']??'';
-                $password = $model->properties['password']??'';
-                if(!empty($email) && !empty($password) && empty($model->user_id)){
-                    $user = User::where("email",$email)->firstOrNew([
-                        "name" => $model->first_name." ".$model->last_name,
-                        "email" => $email,
-                        "password" => \Hash::make($password),
-                    ]);
-                    $model->user_id = $user->id;
-                    $model->save();
-                }
-            }
-        });
-    }
+//    protected static function booted()
+//    {
+//        static::saved(function ($model){
+//            if(!empty($model->properties)){
+//                $email = $model->properties['email']??'';
+//                $password = $model->properties['password']??'';
+//                if(!empty($email) && !empty($password) && empty($model->user_id)){
+//                    $user = User::where("email",$email)->firstOrNew([
+//                        "name" => $model->first_name." ".$model->last_name,
+//                        "email" => $email,
+//                        "password" => \Hash::make($password),
+//                    ]);
+//                    $model->user_id = $user->id;
+//                    $model->save();
+//                }
+//            }
+//        });
+//    }
 
     protected $fillable = [
         "company_id",
