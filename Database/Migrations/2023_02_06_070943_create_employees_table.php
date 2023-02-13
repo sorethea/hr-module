@@ -15,13 +15,12 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("company_id");
+            $table->foreignId("company_id")->nullable();
             $table->string("first_name");
             $table->string("last_name");
             $table->string("gender");
             $table->string("employment_type")->nullable();
             $table->boolean('is_system_user')->default(false);
-            //$table->string('email')->unique()->nullable();
             $table->foreignId("user_id")->nullable();
             $table->date("date_of_birth");
             $table->date("date_of_joining");
