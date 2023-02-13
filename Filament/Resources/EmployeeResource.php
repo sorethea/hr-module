@@ -61,7 +61,7 @@ class EmployeeResource extends Resource
                         ->reactive()
                         ->default(false),
                     Forms\Components\TextInput::make("email")
-                        ->visible(fn($record,\Closure $get)=>$get("is_system_user") && empty($record->user_id))
+                        ->visible(fn($record,\Closure $get)=>dd($record->with("user")))
                         ->required(),
                     Forms\Components\TextInput::make("password")
                         ->password()
