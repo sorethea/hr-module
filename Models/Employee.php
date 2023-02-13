@@ -15,8 +15,8 @@ class Employee extends Model
     {
         static::saved(function ($model){
             if(!empty($model->properties)){
-                $email = $model->properties->email;
-                $password = $model->properties->password;
+                $email = $model->properties['email']??'';
+                $password = $model->properties['password']??'';
                 if(!empty($email) && !empty($password) && empty($model->user_id)){
                     $user = User::where("email",$email)->firstOrNew([
                         "name" => $model->first_name." ".$model->last_name,
