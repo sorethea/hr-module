@@ -38,7 +38,7 @@ class EmployeeResource extends Resource
                         ->required(),
                     Forms\Components\TextInput::make("last_name")
                         ->required(),
-                    Forms\Components\BelongsToSelect::make("company")
+                    Forms\Components\BelongsToSelect::make("company_id")
                         ->relationship("company", "name")
                         ->searchable()
                         ->createOptionForm([
