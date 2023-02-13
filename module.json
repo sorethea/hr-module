@@ -8,5 +8,6 @@
     "providers": [
         "Modules\\HR\\Providers\\HRServiceProvider"
     ],
-    "files": []
+    "files": [],
+    "version": "1.0.0"
 }
