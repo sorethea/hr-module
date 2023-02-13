@@ -56,7 +56,7 @@ class PermissionTableSeeder extends Seeder
             "password"=>Hash::make("12345678"),
         ]);
         $user->assignRole($role);
-        $company = Company::created([
+        $company = Company::create([
             "name"=>"Demo",
             "abbr"=>"DEMO",
         ]);
