@@ -61,19 +61,16 @@ class EmployeeResource extends Resource
                         ->reactive()
                         ->default(false),
                     Forms\Components\TextInput::make("email")
-                        ->visible(fn(\Closure $get)=>$get("is_system_user"))
-                        ->hiddenOn('Edit')
+                        ->visible(fn($record,\Closure $get)=>$get("is_system_user") && !$record)
                         ->required(),
                     Forms\Components\TextInput::make("password")
                         ->password()
                         ->required()
                         ->visible(fn(\Closure $get)=>$get("is_system_user"))
-                        ->hiddenOn('Edit')
                         ->same("password_confirmation"),
                     Forms\Components\TextInput::make("password_confirmation")
                         ->password()
                         ->visible(fn(\Closure $get)=>$get("is_system_user"))
-                        ->hiddenOn('Edit')
                         ->required(),
                     Forms\Components\Select::make("gender")
                         ->options(app(HRSetting::class)->gender)
