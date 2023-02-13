@@ -60,10 +60,10 @@ class EmployeeResource extends Resource
                     Forms\Components\Toggle::make("is_system_user")
                         ->reactive()
                         ->default(false),
-                    Forms\Components\TextInput::make("email")
+                    Forms\Components\TextInput::make("properties.email")
                         ->visible(fn($record,\Closure $get)=>dd($record))
                         ->required(),
-                    Forms\Components\TextInput::make("password")
+                    Forms\Components\TextInput::make("properties.password")
                         ->password()
                         ->required()
                         ->visible(fn($record,\Closure $get)=>$get("is_system_user") && empty($record->user_id))
