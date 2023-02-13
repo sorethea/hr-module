@@ -16,11 +16,11 @@ class CreateEmployee extends CreateRecord
         if($data["is_system_user"]){
 
             $name = $data["first_name"]." ".$data["last_name"];
-            $user = User::where("email",$data["properties.email"])
+            $user = User::where("email",$data["properties"]["email"])
                 ->firstOrCreate([
                     "name" => $name,
-                    "email" => $data["properties.email"],
-                    "password" => \Hash::make($data['properties.password']),
+                    "email" => $data["properties"]["email"],
+                    "password" => \Hash::make($data["properties"]["password"]),
                 ]);
             $data["user_id"] = $user->id;
 
