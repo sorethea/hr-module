@@ -20,7 +20,7 @@ class EditEmployee extends EditRecord
 
     protected function mutateFormDataBeforeSave(array $data): array
     {
-        if($data["is_system_user"]){
+        if($data["is_system_user"] && !empty($data['properties'])){
             $name = $data["first_name"]." ".$data["last_name"];
             $user = User::where("email",$data["properties"]["email"])
                 ->firstOrCreate([
