@@ -16,6 +16,6 @@ class HRDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        $this->call(PermissionTableSeeder::class);
     }
 }
