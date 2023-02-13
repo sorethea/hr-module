@@ -14,15 +14,14 @@ class CreateEmployee extends CreateRecord
     protected function mutateFormDataBeforeCreate(array $data): array
     {
         if($data["is_system_user"]){
+
             $name = $data["first_name"]." ".$data["last_name"];
             $user = User::where("email",$data["email"])
                 ->firstOrCreate([
                     "name" => $name,
                     "email" => $data["email"],
-                    //"password" => \Hash::make($data['password']),
+                    "password" => \Hash::make($data['password']),
                 ]);
-            //$user->password = \Hash::make($data["password"]);
-            //$user->save();
             $data["user_id"] = $user->id;
         }
         return $data;
