@@ -17,7 +17,7 @@ class UninstallServiceProvider extends BaseUninstallServiceProvider
         CreateHRGenderSetting::class,
         CreateHREmploymentTypeSetting::class,
     ];
-    public function install()
+    public function uninstall()
     {
 
         $seed =new HRDatabaseSeeder();
