@@ -18,4 +18,8 @@ class HRDatabaseSeeder extends Seeder
         $this->call(ModuleTableSeeder::class);
         $this->call(PermissionTableSeeder::class);
     }
+    public function rollback()
+    {
+
+    }
 }
