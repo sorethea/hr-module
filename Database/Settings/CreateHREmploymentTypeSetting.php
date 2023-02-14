@@ -1,5 +1,5 @@
 <?php
-//namespace Modules\HR\Database\Settings;
+namespace Modules\HR\Database\Settings;
 use Spatie\LaravelSettings\Migrations\SettingsMigration;
 
 class CreateHREmploymentTypeSetting extends SettingsMigration
