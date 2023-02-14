@@ -11,4 +11,9 @@ class CreateHRGenderSetting extends SettingsMigration
             'female'=>'Female',
         ]);
     }
+
+    public function down(): void
+    {
+        $this->migrator->delete('hr.gender');
+    }
 }

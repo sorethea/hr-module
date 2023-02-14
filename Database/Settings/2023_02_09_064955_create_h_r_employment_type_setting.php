@@ -12,4 +12,9 @@ class CreateHREmploymentTypeSetting extends SettingsMigration
             'part-time'=>'Part Time',
         ]);
     }
+
+    public function down(): void
+    {
+        $this->migrator->delete('hr.employment_type');
+    }
 }
