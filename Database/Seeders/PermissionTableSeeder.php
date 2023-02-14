@@ -50,7 +50,7 @@ class PermissionTableSeeder extends Seeder
                 }
             }
         }
-        $user = User::create([
+        $user = User::findOrNew([
             "name"=>"Employee",
             "email"=>"employee@demo.com",
             "password"=>Hash::make("12345678"),
