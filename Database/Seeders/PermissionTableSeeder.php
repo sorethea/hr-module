@@ -2,10 +2,10 @@
 
 namespace Modules\HR\Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Modules\Core\Models\User;
 use Modules\HR\Models\Company;
 use Modules\HR\Models\Employee;
 use Spatie\Permission\Models\Permission;
