@@ -56,11 +56,11 @@ class PermissionTableSeeder extends Seeder
             "password"=>Hash::make("12345678"),
         ]);
         $user->assignRole($role);
-        $company = Company::create([
+        $company = Company::findOrNew([
             "name"=>"Demo",
             "abbr"=>"DEMO",
         ]);
-        Employee::create([
+        Employee::findOrNew([
             "first_name"=>"Employee",
             "last_name"=>"Demo",
             "gender"=>"male",
