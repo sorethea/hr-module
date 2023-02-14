@@ -75,4 +75,13 @@ class PermissionTableSeeder extends Seeder
             ]
         ]);
     }
+
+    public function rollback(){
+        $user = User::where("email","employee@demo.com")->first();
+        $user->removeRole("Employee");
+        $user->delete();
+        $role = Role::where("name","Employee");
+        $role->permissions()->delete();
+        Permission::where("module","hr")->delete();
+    }
 }

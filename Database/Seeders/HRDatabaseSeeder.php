@@ -15,11 +15,11 @@ class HRDatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        $this->call(ModuleTableSeeder::class);
         $this->call(PermissionTableSeeder::class);
     }
     public function rollback()
     {
-
+        $permissionTableSeeder = new PermissionTableSeeder();
+        $permissionTableSeeder->rollback();
     }
 }

@@ -23,7 +23,7 @@ class InstallServiceProvider extends BaseInstallServiceProvider
     ];
     public function install()
     {
-        $this->migrate();
+        $this->createSchema();
         $seed =new HRDatabaseSeeder();
         $seed->run();
     }
