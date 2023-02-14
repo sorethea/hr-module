@@ -3,14 +3,14 @@
 namespace Modules\HR\Providers;
 
 use Closure;
+use CreateCompanyTable;
+use CreateEmployeeTable;
+use CreateHREmploymentTypeSetting;
+use CreateHRGenderSetting;
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Providers\BaseInstallServiceProvider;
-use Modules\HR\Database\Migrations\CreateCompanyTable;
-use Modules\HR\Database\Migrations\CreateEmployeeTable;
 use Modules\HR\Database\Seeders\HRDatabaseSeeder;
-use Modules\HR\Database\Settings\CreateHREmploymentTypeSetting;
-use Modules\HR\Database\Settings\CreateHRGenderSetting;
-use Modules\HR\Filament\Resources\EmployeeResource\Pages\CreateEmployee;
+
 
 class InstallServiceProvider extends BaseInstallServiceProvider
 {
