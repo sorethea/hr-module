@@ -19,8 +19,9 @@ class UninstallServiceProvider extends BaseUninstallServiceProvider
     ];
     public function install()
     {
-        $this->dropSchema();
+
         $seed =new HRDatabaseSeeder();
         $seed->rollback();
+        $this->dropSchema();
     }
 }
