@@ -53,8 +53,10 @@ class PermissionTableSeeder extends Seeder
         $user = User::firstOrCreate([
             "name"=>"Employee",
             "email"=>"employee@demo.com",
-            "password"=>Hash::make("12345678"),
         ]);
+        if(empty($user->password)){
+            $user->password = Hash::make("12345678");
+        }
         $user->assignRole($role);
         $company = Company::firstOrCreate([
             "name"=>"Demo",
