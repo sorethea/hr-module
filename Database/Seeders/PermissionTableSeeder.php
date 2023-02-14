@@ -80,8 +80,9 @@ class PermissionTableSeeder extends Seeder
         $user = User::where("email","employee@demo.com")->first();
         $user->removeRole("Employee");
         $user->delete();
-        $role = Role::where("name","Employee");
-        $role->permissions()->delete();
+        $role = Role::where("name","Employee")->first();
+        $role->permissions()->detach();
+        $role->delete();
         Permission::where("module","hr")->delete();
     }
 }
