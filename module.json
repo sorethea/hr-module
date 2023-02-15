@@ -11,6 +11,7 @@
     "files": [],
     "version": "1.0.0",
     "requirements": [
-        "Core"
+        "Core",
+        "Utility"
     ]
 }
