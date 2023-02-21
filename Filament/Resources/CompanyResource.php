@@ -2,16 +2,14 @@
 
 namespace Modules\HR\Filament\Resources;
 
-use Modules\Core\Filament\Resources\UserResource\RelationManagers\AddressesRelationManager;
-use Modules\HR\Filament\Resources\CompanyResource\Pages;
-use Modules\HR\Models\Company;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Modules\HR\Filament\Resources\CompanyResource\Pages;
+use Modules\HR\Models\Company;
+use Modules\LAM\Filament\Resources\UserResource\RelationManagers\AddressesRelationManager;
 
 class CompanyResource extends Resource
 {
