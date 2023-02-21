@@ -4,8 +4,8 @@ namespace Modules\HR\Filament\Resources\EmployeeResource\Pages;
 
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
-use Modules\Coresys\Models\User;
 use Modules\HR\Filament\Resources\EmployeeResource;
+use Modules\LAM\Models\User;
 
 class EditEmployee extends EditRecord
 {

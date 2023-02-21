@@ -3,8 +3,8 @@
 namespace Modules\HR\Filament\Resources\EmployeeResource\Pages;
 
 use Filament\Resources\Pages\CreateRecord;
-use Modules\Coresys\Models\User;
 use Modules\HR\Filament\Resources\EmployeeResource;
+use Modules\LAM\Models\User;
 
 class CreateEmployee extends CreateRecord
 {

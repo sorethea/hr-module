@@ -5,7 +5,6 @@ namespace Modules\HR\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Modules\Coresys\Models\User;
 
 class Employee extends Model
 {
@@ -54,7 +53,7 @@ class Employee extends Model
     }
 
     public function user(): BelongsTo{
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(\Modules\LAM\Models\User::class);
     }
 
     public function company(): BelongsTo{
