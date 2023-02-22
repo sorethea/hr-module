@@ -1,8 +1,8 @@
 <?php
-namespace Modules\HR\Database\Settings;
+
 use Spatie\LaravelSettings\Migrations\SettingsMigration;
 
-class CreateHRGenderSetting extends SettingsMigration
+class CreateHRGenderSettings extends SettingsMigration
 {
     public function up(): void
     {

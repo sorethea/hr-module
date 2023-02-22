@@ -1,8 +1,8 @@
 <?php
-namespace Modules\HR\Database\Settings;
+
 use Spatie\LaravelSettings\Migrations\SettingsMigration;
 
-class CreateHREmploymentTypeSetting extends SettingsMigration
+class CreateHREmploymentTypeSettings extends SettingsMigration
 {
     public function up(): void
     {
