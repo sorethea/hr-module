@@ -11,10 +11,19 @@ use Modules\LAM\Providers\BaseUninstallServiceProvider;
 
 class UninstallServiceProvider extends BaseUninstallServiceProvider
 {
+    private $settings = [
+        CreateHREmploymentTypeSetting::class,
+        CreateHRGenderSetting::class,
+    ];
 
     public function uninstall()
     {
         $seed =new HRDatabaseSeeder();
         $seed->rollback();
+
+        foreach ($this->settings as $setting){
+            $settingObj = new $setting();
+            $settingObj->down();
+        }
     }
 }
