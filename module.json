@@ -2,7 +2,7 @@
     "name": "HR",
     "alias": "hr",
     "description": "",
-    "class": "module",
+    "type": "module",
     "keywords": [],
     "priority": 0,
     "providers": [
