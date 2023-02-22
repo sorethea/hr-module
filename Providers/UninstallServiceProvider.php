@@ -2,18 +2,16 @@
 
 namespace Modules\HR\Providers;
 
-use Modules\HR\Database\Migrations\CreateCompaniesTable;
-use Modules\HR\Database\Migrations\CreateEmployeesTable;
 use Modules\HR\Database\Seeders\HRDatabaseSeeder;
-use Modules\HR\Database\Settings\CreateHREmploymentTypeSetting;
-use Modules\HR\Database\Settings\CreateHRGenderSetting;
+use Modules\HR\Database\Settings\CreateHREmploymentTypeSettings;
+use Modules\HR\Database\Settings\CreateHRGenderSettings;
 use Modules\LAM\Providers\BaseUninstallServiceProvider;
 
 class UninstallServiceProvider extends BaseUninstallServiceProvider
 {
-    private $settings = [
-        CreateHREmploymentTypeSetting::class,
-        CreateHRGenderSetting::class,
+    private array $settings = [
+        CreateHREmploymentTypeSettings::class,
+        CreateHRGenderSettings::class,
     ];
 
     public function uninstall()
