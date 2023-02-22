@@ -26,7 +26,7 @@ class HRServiceProvider extends ServiceProvider
     {
         $this->registerConfig();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
-        $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Settings'));
+        //$this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Settings'));
     }
 
     /**
