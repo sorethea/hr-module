@@ -23,7 +23,7 @@ class PermissionTableSeeder extends Seeder
         Model::unguard();
 
 
-        $role = Role::findOrCreate("Employee");
+        $role = Role::findOrCreate("employee");
         $module = "hr";
         $models =[
             "employee",
@@ -79,10 +79,10 @@ class PermissionTableSeeder extends Seeder
     public function rollback(){
         $user = User::where("email","employee@demo.com")->first();
         if(!empty($user)){
-            $user->removeRole("Employee");
+            $user->removeRole("employee");
             $user->delete();
         }
-        $role = Role::where("name","Employee")->first();
+        $role = Role::where("name","employee")->first();
         if(!empty($role)){
             $role->permissions()->detach();
             $role->delete();
