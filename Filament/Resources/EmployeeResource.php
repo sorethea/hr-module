@@ -100,6 +100,7 @@ class EmployeeResource extends Resource
                 Tables\Columns\TextColumn::make("gender")->searchable(),
                 Tables\Columns\TextColumn::make("employment_type")->searchable(),
                 Tables\Columns\BooleanColumn::make("is_system_user"),
+                Tables\Columns\BooleanColumn::make("active"),
             ])
             ->filters([
                 //
