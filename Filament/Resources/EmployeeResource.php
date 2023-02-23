@@ -94,7 +94,12 @@ class EmployeeResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make("first_name")->searchable(),
+                Tables\Columns\TextColumn::make("last_name")->searchable(),
+                Tables\Columns\TextColumn::make("company.name")->searchable(),
+                Tables\Columns\TextColumn::make("gender")->searchable(),
+                Tables\Columns\TextColumn::make("employment_type")->searchable(),
+                Tables\Columns\BooleanColumn::make("is_system_user"),
             ])
             ->filters([
                 //
