@@ -39,6 +39,7 @@ class HRSettingPage extends SettingsPage
             Card::make([
                 KeyValue::make("gender"),
                 KeyValue::make("employment_type"),
+                KeyValue::make("leave_type"),
             ])
         ];
     }
