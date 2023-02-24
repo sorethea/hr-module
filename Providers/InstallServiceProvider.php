@@ -19,11 +19,11 @@ class InstallServiceProvider extends BaseInstallServiceProvider
     public function install()
     {
         $seed =new HRDatabaseSeeder();
-        $seed->run();
+        $seed?->run();
 
         foreach ($this->settings as $setting){
             $settingObj = new $setting();
-            $settingObj->up();
+            $settingObj?->up();
         }
     }
 }

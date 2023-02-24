@@ -17,11 +17,11 @@ class UninstallServiceProvider extends BaseUninstallServiceProvider
     public function uninstall()
     {
         $seed =new HRDatabaseSeeder();
-        $seed->rollback();
+        $seed?->rollback();
 
         foreach ($this->settings as $setting){
             $settingObj = new $setting();
-            $settingObj->down();
+            $settingObj?->down();
         }
     }
 }
