@@ -23,12 +23,13 @@ class PermissionTableSeeder extends Seeder
         Model::unguard();
 
 
-        $role = Role::findOrCreate("employee");
+        $employee = Role::findOrCreate("employee");
+        $admin = Role::findByName("admin");
         $module = "hr";
         $models =[
             "hrs",
-            "employee",
-            "company",
+            "employees",
+            "companies",
         ];
         foreach ($models as $model){
             $levels = [
@@ -46,7 +47,7 @@ class PermissionTableSeeder extends Seeder
                     $permission->module = $module;
                     $permission->save();
                     if($level=="manager"){
-                        $role->givePermissionTo($permission);
+                        $admin->givePermissionTo($permission);
                     }
                 }
             }
@@ -56,7 +57,7 @@ class PermissionTableSeeder extends Seeder
             "email"=>"employee@demo.com",
             "password"=>Hash::make("12345678"),
         ]);
-        $user->assignRole($role);
+        $user->assignRole($employee);
         $company = Company::firstOrCreate([
             "name"=>"Demo",
             "abbr"=>"DEMO",
