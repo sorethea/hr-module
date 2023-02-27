@@ -35,6 +35,7 @@ class HRSettingPage extends SettingsPage
 
     protected function getFormSchema(): array
     {
+        if(auth()->user()->can("hrs.manager"))
         return [
             Card::make([
                 KeyValue::make("gender"),
