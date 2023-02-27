@@ -33,9 +33,13 @@ class HRSettingPage extends SettingsPage
 
     protected static string $settings = HRSetting::class;
 
+    protected static function shouldRegisterNavigation(): bool
+    {
+        return auth()->user()->can("hrs.manager");
+    }
+
     protected function getFormSchema(): array
     {
-        if(auth()->user()->can("hrs.manager"))
         return [
             Card::make([
                 KeyValue::make("gender"),
