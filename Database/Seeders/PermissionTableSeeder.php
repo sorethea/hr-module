@@ -26,6 +26,7 @@ class PermissionTableSeeder extends Seeder
         $role = Role::findOrCreate("employee");
         $module = "hr";
         $models =[
+            "hrs",
             "employee",
             "company",
         ];
