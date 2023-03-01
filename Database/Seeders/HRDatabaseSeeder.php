@@ -20,6 +20,7 @@ class HRDatabaseSeeder extends Seeder
     public function rollback()
     {
         $permissionTableSeeder = new PermissionTableSeeder();
+        dd($permissionTableSeeder->rollback());
         $permissionTableSeeder->rollback();
     }
 }
