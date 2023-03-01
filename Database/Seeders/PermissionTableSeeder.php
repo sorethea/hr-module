@@ -79,6 +79,7 @@ class PermissionTableSeeder extends Seeder
     }
 
     public function rollback(){
+        Model::unguard();
         try{
             $user = User::where("email","employee@demo.com")->first();
             if(!empty($user)){
