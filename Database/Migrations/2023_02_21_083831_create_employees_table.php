@@ -40,7 +40,7 @@ return new class extends Migration
             $table->text("properties")->nullable();
             $table->boolean("is_default")->default(false);
             $table->boolean("active")->default(true);
-            $table->timestamp();
+            $table->timestamps();
         });
     }
 
