@@ -15,7 +15,6 @@ class InstallServiceProvider extends BaseInstallServiceProvider
     private array $settings = [
         CreateHREmploymentTypeSettings::class,
         CreateHRGenderSettings::class,
-        CreateHRLeaveTypeSettings::class,
     ];
 
     public function install()
