@@ -19,8 +19,8 @@ class HRDatabaseSeeder extends Seeder
     }
     public function rollback()
     {
-        info("uninstall HR module");
         $permissionTableSeeder = new PermissionTableSeeder();
         $permissionTableSeeder->rollback();
+        info("uninstall HR module");
     }
 }
