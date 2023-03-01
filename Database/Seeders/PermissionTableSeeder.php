@@ -79,16 +79,21 @@ class PermissionTableSeeder extends Seeder
     }
 
     public function rollback(){
-        $user = User::where("email","employee@demo.com")->first();
-        if(!empty($user)){
-            $user->removeRole("employee");
-            $user->delete();
+        try{
+            $user = User::where("email","employee@demo.com")->first();
+            if(!empty($user)){
+                $user->removeRole("employee");
+                $user->delete();
+            }
+            $role = Role::where("name","employee")->first();
+            if(!empty($role)){
+                $role->permissions()->detach();
+                $role->delete();
+            }
+            Permission::where("module","hr")->delete();
+        }catch (\Throwable $exception){
+            info($exception->getMessage());
         }
-        $role = Role::where("name","employee")->first();
-        if(!empty($role)){
-            $role->permissions()->detach();
-            $role->delete();
-        }
-        Permission::where("module","hr")->delete();
+
     }
 }
