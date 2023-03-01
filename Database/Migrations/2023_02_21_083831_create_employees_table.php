@@ -28,6 +28,20 @@ return new class extends Migration
             $table->boolean("active")->default(true);
             $table->timestamps();
         });
+
+        Schema::create('employee_contact_details', function (Blueprint $table){
+            $table->id();
+            $table->foreignId('employee_id');
+            $table->string('mobile_number');
+            $table->string('personal_email')->nullable();
+            $table->string('company_email')->nullable();
+            $table->string('permanent_address')->nullable();
+            $table->string('current_address')->nullable();
+            $table->text("properties")->nullable();
+            $table->boolean("is_default")->default(false);
+            $table->boolean("active")->default(true);
+            $table->timestamp();
+        });
     }
 
     /**
@@ -38,5 +52,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('employees');
+        Schema::dropIfExists('employee_contact_details');
     }
 };
