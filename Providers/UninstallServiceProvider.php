@@ -13,7 +13,6 @@ class UninstallServiceProvider extends BaseUninstallServiceProvider
     private array $settings = [
         CreateHREmploymentTypeSettings::class,
         CreateHRGenderSettings::class,
-        CreateHRLeaveTypeSettings::class,
     ];
 
     public function uninstall()
