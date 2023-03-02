@@ -114,7 +114,7 @@ class EmployeeResource extends Resource
                                 Forms\Components\TextInput::make("educations.year_of_passing")->required(),
                                 Forms\Components\TextInput::make("educations.qualification")->nullable(),
                                 Forms\Components\TextInput::make("educations.level")->nullable(),
-                            ]),
+                            ])->columnSpan(2)->columns(4),
                         ])->columnSpan(2)->columns(2),
                     ]),
                     Forms\Components\Wizard\Step::make("work experiences")->schema([
