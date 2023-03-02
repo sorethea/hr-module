@@ -107,11 +107,20 @@ class EmployeeResource extends Resource
                                 ->nullable(),
                         ])->columnSpan(2)->columns(2),
                     ]),
-                    Forms\Components\Wizard\Step::make("education")->schema([
-
+                    Forms\Components\Wizard\Step::make("educations")->schema([
+                        Forms\Components\Card::make([
+                            Forms\Components\Repeater::make("education")->schema([
+                                Forms\Components\TextInput::make("educations.education_institution")->required(),
+                                Forms\Components\TextInput::make("educations.year_of_passing")->required(),
+                                Forms\Components\TextInput::make("educations.qualification")->nullable(),
+                                Forms\Components\TextInput::make("educations.level")->nullable(),
+                            ]),
+                        ])->columnSpan(2)->columns(2),
                     ]),
                     Forms\Components\Wizard\Step::make("work experiences")->schema([
+                        Forms\Components\Card::make([
 
+                        ])->columnSpan(2)->columns(2),
                     ]),
                     Forms\Components\Wizard\Step::make("attachments")->schema([
                         Forms\Components\Card::make([
