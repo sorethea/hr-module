@@ -105,6 +105,9 @@ class EmployeeResource extends Resource
                                 ->nullable(),
                             Forms\Components\Textarea::make("contact_details.current_address")
                                 ->nullable(),
+                            Forms\Components\SpatieMediaLibraryFileUpload::make("attachments")
+                                ->collection("contact_details")
+                                ->multiple(),
                         ])->columnSpan(2)->columns(2),
                     ]),
                     Forms\Components\Wizard\Step::make("education")->schema([
