@@ -119,7 +119,12 @@ class EmployeeResource extends Resource
                     ]),
                     Forms\Components\Wizard\Step::make("work experiences")->schema([
                         Forms\Components\Card::make([
-
+                            Forms\Components\Repeater::make("work_experiences")->schema([
+                                Forms\Components\TextInput::make("work_experiences.company")->required(),
+                                Forms\Components\TextInput::make("work_experiences.designation")->required(),
+                                Forms\Components\TextInput::make("work_experiences.from_year")->nullable(),
+                                Forms\Components\TextInput::make("work_experiences.to_year")->nullable(),
+                            ])->columnSpan(2)->columns(4),
                         ])->columnSpan(2)->columns(2),
                     ]),
                     Forms\Components\Wizard\Step::make("attachments")->schema([
