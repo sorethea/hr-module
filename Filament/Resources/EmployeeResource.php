@@ -33,60 +33,74 @@ class EmployeeResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Card::make([
-                    Forms\Components\TextInput::make("first_name")
-                        ->required(),
-                    Forms\Components\TextInput::make("last_name")
-                        ->required(),
-                    Forms\Components\BelongsToSelect::make("company")
-                        ->relationship("company", "name")
-                        ->searchable()
-                        ->createOptionForm([
-                            Forms\Components\Group::make([
-                                Forms\Components\TextInput::make("name")
-                                    ->unique("companies","name",fn($record)=>$record)
-                                    ->required(),
-                                Forms\Components\TextInput::make("abbr")
-                                    ->unique("companies","abbr",fn($record)=>$record)
-                                    ->required(),
-                                Forms\Components\BelongsToSelect::make("parent")
-                                    ->relationship("parent","name",fn($query)=>$query->where("is_group",true))
-                                    ->nullable(),
-                                Forms\Components\Toggle::make("is_group")
-                                    ->default(false),
-                            ])->columns(2),
-                        ])
-                        ->required(),
-                    Forms\Components\Hidden::make("user_id"),
-                    Forms\Components\Toggle::make("is_system_user")
-                        ->reactive()
-                        ->default(false),
-                    Forms\Components\TextInput::make("properties.email")
-                        ->visible(fn($record,\Closure $get)=>$get("is_system_user") && empty($record->user_id))
-                        ->required(),
-                    Forms\Components\TextInput::make("properties.password")
-                        ->password()
-                        ->required()
-                        ->visible(fn($record,\Closure $get)=>$get("is_system_user") && empty($record->user_id))
-                        ->same("password_confirmation"),
-                    Forms\Components\TextInput::make("password_confirmation")
-                        ->password()
-                        ->visible(fn($record,\Closure $get)=>$get("is_system_user") && empty($record->user_id))
-                        ->required(),
-                    Forms\Components\Select::make("gender")
-                        ->options(app(HRSetting::class)->gender)
-                        ->searchable()
-                        ->required(),
-                    Forms\Components\Select::make("employment_type")
-                        ->searchable()
-                        ->options(app(HRSetting::class)->employment_type),
-                    Forms\Components\DatePicker::make("date_of_birth")
-                        ->required(),
-                    Forms\Components\DatePicker::make("date_of_joining")
-                        ->required(),
-                    Forms\Components\Toggle::make("active")
-                        ->default(true),
-                ])->columns(2),
+                Forms\Components\Wizard::make([
+                    Forms\Components\Wizard\Step::make("info")->schema([
+                        Forms\Components\Card::make([
+                            Forms\Components\TextInput::make("first_name")
+                                ->required(),
+                            Forms\Components\TextInput::make("last_name")
+                                ->required(),
+                            Forms\Components\BelongsToSelect::make("company")
+                                ->relationship("company", "name")
+                                ->searchable()
+                                ->createOptionForm([
+                                    Forms\Components\Group::make([
+                                        Forms\Components\TextInput::make("name")
+                                            ->unique("companies","name",fn($record)=>$record)
+                                            ->required(),
+                                        Forms\Components\TextInput::make("abbr")
+                                            ->unique("companies","abbr",fn($record)=>$record)
+                                            ->required(),
+                                        Forms\Components\BelongsToSelect::make("parent")
+                                            ->relationship("parent","name",fn($query)=>$query->where("is_group",true))
+                                            ->nullable(),
+                                        Forms\Components\Toggle::make("is_group")
+                                            ->default(false),
+                                    ])->columns(2),
+                                ])
+                                ->required(),
+                            Forms\Components\Hidden::make("user_id"),
+                            Forms\Components\Toggle::make("is_system_user")
+                                ->reactive()
+                                ->default(false),
+                            Forms\Components\TextInput::make("properties.email")
+                                ->visible(fn($record,\Closure $get)=>$get("is_system_user") && empty($record->user_id))
+                                ->required(),
+                            Forms\Components\TextInput::make("properties.password")
+                                ->password()
+                                ->required()
+                                ->visible(fn($record,\Closure $get)=>$get("is_system_user") && empty($record->user_id))
+                                ->same("password_confirmation"),
+                            Forms\Components\TextInput::make("password_confirmation")
+                                ->password()
+                                ->visible(fn($record,\Closure $get)=>$get("is_system_user") && empty($record->user_id))
+                                ->required(),
+                            Forms\Components\Select::make("gender")
+                                ->options(app(HRSetting::class)->gender)
+                                ->searchable()
+                                ->required(),
+                            Forms\Components\Select::make("employment_type")
+                                ->searchable()
+                                ->options(app(HRSetting::class)->employment_type),
+                            Forms\Components\DatePicker::make("date_of_birth")
+                                ->required(),
+                            Forms\Components\DatePicker::make("date_of_joining")
+                                ->required(),
+                            Forms\Components\Toggle::make("active")
+                                ->default(true),
+                        ])->columns(2),
+                    ]),
+                    Forms\Components\Wizard\Step::make("contact_details")->schema([
+
+                    ]),
+                    Forms\Components\Wizard\Step::make("education")->schema([
+
+                    ]),
+                    Forms\Components\Wizard\Step::make("work_experiences")->schema([
+
+                    ]),
+                ]),
+
             ]);
     }
 
