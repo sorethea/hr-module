@@ -40,12 +40,18 @@ class Employee extends Model
         "is_system_user",
         "date_of_birth",
         "date_of_joining",
+        "work_experiences",
+        "educations",
+        "contact_details",
         "properties",
         "active",
     ];
 
     protected $casts = [
-        "properties" => "encrypted:array"
+        "contact_details" => "json",
+        "educations" => "json",
+        "work_experiences" => "json",
+        "properties" => "encrypted:json",
     ];
 
     protected static function newFactory()
@@ -59,10 +65,5 @@ class Employee extends Model
 
     public function company(): BelongsTo{
         return $this->belongsTo(Company::class);
-    }
-
-    public function contact_details(): HasOneOrMany
-    {
-        return $this->hasOne(EmployeeContactDetail::class);
     }
 }
