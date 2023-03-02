@@ -90,13 +90,13 @@ class EmployeeResource extends Resource
                                 ->default(true),
                         ])->columns(2),
                     ]),
-                    Forms\Components\Wizard\Step::make("contact_details")->schema([
+                    Forms\Components\Wizard\Step::make("contact details")->schema([
 
                     ]),
                     Forms\Components\Wizard\Step::make("education")->schema([
 
                     ]),
-                    Forms\Components\Wizard\Step::make("work_experiences")->schema([
+                    Forms\Components\Wizard\Step::make("work experiences")->schema([
 
                     ]),
                 ])->columnSpan(2),
