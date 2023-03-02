@@ -100,7 +100,6 @@ class EmployeeResource extends Resource
 
                     ]),
                 ])->columns(2),
-
             ]);
     }
 
