@@ -91,7 +91,10 @@ class EmployeeResource extends Resource
                         ])->columns(2),
                     ]),
                     Forms\Components\Wizard\Step::make("contact details")->schema([
-
+                        Forms\Components\Card::make([
+                            Forms\Components\TextInput::make("contact_details.mobile_number")
+                                ->required(),
+                        ])->columnSpan(2)->columns(2),
                     ]),
                     Forms\Components\Wizard\Step::make("education")->schema([
 
