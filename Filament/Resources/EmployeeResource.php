@@ -109,7 +109,7 @@ class EmployeeResource extends Resource
                     ]),
                     Forms\Components\Wizard\Step::make("educations")->schema([
                         Forms\Components\Card::make([
-                            Forms\Components\Repeater::make("educations.index")->schema([
+                            Forms\Components\Repeater::make("educations")->schema([
                                 Forms\Components\TextInput::make("educations.education_institution")->required(),
                                 Forms\Components\TextInput::make("educations.year_of_passing")->required(),
                                 Forms\Components\TextInput::make("educations.qualification")->nullable(),
