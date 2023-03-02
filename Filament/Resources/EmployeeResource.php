@@ -92,8 +92,19 @@ class EmployeeResource extends Resource
                     ]),
                     Forms\Components\Wizard\Step::make("contact details")->schema([
                         Forms\Components\Card::make([
+                            Forms\Components\TextInput::make("contact_details.id_number")
+                                ->helperText("ID card number or passport number")
+                                ->required(),
                             Forms\Components\TextInput::make("contact_details.mobile_number")
                                 ->required(),
+                            Forms\Components\TextInput::make("contact_details.personal_email")
+                                ->nullable(),
+                            Forms\Components\TextInput::make("contact_details.company_email")
+                                ->nullable(),
+                            Forms\Components\Textarea::make("contact_details.permanent_address")
+                                ->nullable(),
+                            Forms\Components\Textarea::make("contact_details.current_address")
+                                ->nullable(),
                         ])->columnSpan(2)->columns(2),
                     ]),
                     Forms\Components\Wizard\Step::make("education")->schema([
