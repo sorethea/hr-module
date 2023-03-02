@@ -114,10 +114,12 @@ class EmployeeResource extends Resource
 
                     ]),
                     Forms\Components\Wizard\Step::make("attachments")->schema([
-                        Forms\Components\SpatieMediaLibraryFileUpload::make("attachments")
-                            ->collection("employee_attachments")
-                            ->columnSpan(2)
-                            ->multiple(),
+                        Forms\Components\Card::make([
+                            Forms\Components\SpatieMediaLibraryFileUpload::make("attachments")
+                                ->collection("employee_attachments")
+                                ->columnSpan(2)
+                                ->multiple(),
+                        ]),
                     ]),
                 ])->columnSpan(2),
             ]);
