@@ -99,7 +99,7 @@ class EmployeeResource extends Resource
                     Forms\Components\Wizard\Step::make("work_experiences")->schema([
 
                     ]),
-                ]),
+                ])->columns(2),
 
             ]);
     }
