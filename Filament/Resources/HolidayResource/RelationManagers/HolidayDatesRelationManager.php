@@ -8,6 +8,7 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\This;
 
 class HolidayDatesRelationManager extends RelationManager
 {
@@ -47,7 +48,7 @@ class HolidayDatesRelationManager extends RelationManager
                     ->color('success')
                     ->label("New weekly holiday")
                     ->action(function (){
-                        info(json_encode(request()->get("serverMemo")["dataMeta"]));
+                        info(json_encode($this->getRelationship()));
                     })
                     ->form([
                         Forms\Components\Group::make([
