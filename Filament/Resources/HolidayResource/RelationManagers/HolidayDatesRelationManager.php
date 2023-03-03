@@ -49,19 +49,22 @@ class HolidayDatesRelationManager extends RelationManager
 
                     })
                     ->form([
-                        Forms\Components\Select::make("weekly_off")
-                            ->options([
-                                "Monday",
-                                "Tuesday",
-                                "Wednesday",
-                                "Thursday",
-                                "Friday",
-                                "Saturday",
-                                "Sunday",
-                            ])
-                            ->required(),
-                        Forms\Components\Toggle::make("half_day")
-                            ->default(false),
+                        Forms\Components\Card::make([
+                            Forms\Components\Select::make("weekly_off")
+                                ->options([
+                                    "Monday",
+                                    "Tuesday",
+                                    "Wednesday",
+                                    "Thursday",
+                                    "Friday",
+                                    "Saturday",
+                                    "Sunday",
+                                ])
+                                ->searchable()
+                                ->required(),
+                            Forms\Components\Toggle::make("half_day")
+                                ->default(false),
+                        ])->columns(2)
                     ]),
                 Tables\Actions\CreateAction::make(),
             ])
