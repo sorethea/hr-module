@@ -42,6 +42,9 @@ class HolidayDatesRelationManager extends RelationManager
             ])
             ->headerActions([
                 Tables\Actions\Action::make("weekly_holiday")
+                    ->button()
+                    ->color('success')
+                    ->modalActions()
                     ->label("New weekly holiday"),
                 Tables\Actions\CreateAction::make(),
             ])
