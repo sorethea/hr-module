@@ -7,6 +7,7 @@ use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Database\Eloquent\Model;
 
 class HolidayDatesRelationManager extends RelationManager
 {
@@ -45,8 +46,8 @@ class HolidayDatesRelationManager extends RelationManager
                     ->button()
                     ->color('success')
                     ->label("New weekly holiday")
-                    ->action(function (){
-                        info(parent::getViewData());
+                    ->action(function (Model $record){
+                        info($record);
                     })
                     ->form([
                         Forms\Components\Group::make([
