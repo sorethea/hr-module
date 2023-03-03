@@ -34,7 +34,7 @@ class HolidayDatesRelationManager extends RelationManager
                 //
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make(),
+                Tables\Actions\CreateAction::make()->label("Holiday Date"),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
