@@ -19,7 +19,7 @@ class HolidayResource extends Resource
 
     protected static function getNavigationIcon(): string
     {
-        return config('hr.models.Employee.icon');
+        return config('hr.models.Holiday.icon');
     }
 
     protected static function getNavigationGroup(): ?string
