@@ -43,6 +43,11 @@ class HolidayDatesRelationManager extends RelationManager
             ->headerActions([
                 Tables\Actions\Action::make("weekly_holiday")
                     ->button()
+                    ->color('success')
+                    ->label("New weekly holiday")
+                    ->action(function (){
+
+                    })
                     ->form([
                         Forms\Components\Select::make("weekly_off")
                             ->options([
@@ -57,9 +62,7 @@ class HolidayDatesRelationManager extends RelationManager
                             ->required(),
                         Forms\Components\Toggle::make("half_day")
                             ->default(false),
-                    ])
-                    ->color('success')
-                    ->label("New weekly holiday"),
+                    ]),
                 Tables\Actions\CreateAction::make(),
             ])
             ->actions([
