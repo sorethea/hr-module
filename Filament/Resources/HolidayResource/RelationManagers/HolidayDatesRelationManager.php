@@ -10,7 +10,7 @@ use Filament\Tables;
 
 class HolidayDatesRelationManager extends RelationManager
 {
-    protected static string $relationship = 'holiday_dates';
+    protected static string $relationship = 'holidayDates';
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -34,7 +34,7 @@ class HolidayDatesRelationManager extends RelationManager
                 //
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make()->label("Holiday Date"),
+                Tables\Actions\CreateAction::make(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
