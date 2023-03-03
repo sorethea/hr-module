@@ -43,8 +43,22 @@ class HolidayDatesRelationManager extends RelationManager
             ->headerActions([
                 Tables\Actions\Action::make("weekly_holiday")
                     ->button()
+                    ->form([
+                        Forms\Components\Select::make("weekly_off")
+                            ->options([
+                                "Monday",
+                                "Tuesday",
+                                "Wednesday",
+                                "Thursday",
+                                "Friday",
+                                "Saturday",
+                                "Sunday",
+                            ])
+                            ->required(),
+                        Forms\Components\Toggle::make("half_day")
+                            ->default(false),
+                    ])
                     ->color('success')
-                    ->modalActions()
                     ->label("New weekly holiday"),
                 Tables\Actions\CreateAction::make(),
             ])
