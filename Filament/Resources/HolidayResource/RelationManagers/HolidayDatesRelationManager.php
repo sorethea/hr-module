@@ -19,8 +19,11 @@ class HolidayDatesRelationManager extends RelationManager
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
+                    ->label('Description')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\DatePicker::make('holiday_date')
+                    ->required(),
             ]);
     }
 
@@ -28,7 +31,8 @@ class HolidayDatesRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('name')->label('Description')->searchable(),
+                Tables\Columns\TextColumn::make('holiday_date'),
             ])
             ->filters([
                 //
