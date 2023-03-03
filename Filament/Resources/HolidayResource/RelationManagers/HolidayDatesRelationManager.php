@@ -42,12 +42,12 @@ class HolidayDatesRelationManager extends RelationManager
                 //
             ])
             ->headerActions([
-                Tables\Actions\Action::make("weekly_holiday")
+                Tables\Actions\AssociateAction::make("weekly_holiday")
                     ->button()
                     ->color('success')
                     ->label("New weekly holiday")
-                    ->action(function (Model $record){
-                        info($record);
+                    ->action(function ($record){
+                        info(json_encode($record));
                     })
                     ->form([
                         Forms\Components\Group::make([
