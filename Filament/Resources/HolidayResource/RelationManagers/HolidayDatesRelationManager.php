@@ -47,8 +47,8 @@ class HolidayDatesRelationManager extends RelationManager
                     ->button()
                     ->color('success')
                     ->label("New weekly holiday")
-                    ->action(function (RelationManager $manager){
-                        info(json_encode($manager->ownerRecord));
+                    ->action(function (RelationManager $livewire){
+                        info(json_encode($livewire->ownerRecord));
                     })
                     ->form([
                         Forms\Components\Group::make([
