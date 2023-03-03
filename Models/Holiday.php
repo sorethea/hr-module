@@ -23,7 +23,7 @@ class Holiday extends Model
         return \Modules\HR\Database\factories\HolidayFactory::new();
     }
 
-    public function holiday_dates(): HasMany
+    public function holidayDates(): HasMany
     {
         return $this->hasMany(HolidayDate::class);
     }
