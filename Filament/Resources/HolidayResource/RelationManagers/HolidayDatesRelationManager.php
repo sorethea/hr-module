@@ -45,8 +45,8 @@ class HolidayDatesRelationManager extends RelationManager
                     ->button()
                     ->color('success')
                     ->label("New weekly holiday")
-                    ->action(function ($table){
-                        info(json_encode($table));
+                    ->action(function (){
+                        info(parent::getViewData());
                     })
                     ->form([
                         Forms\Components\Group::make([
