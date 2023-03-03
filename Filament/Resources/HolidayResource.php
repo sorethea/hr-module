@@ -50,7 +50,10 @@ class HolidayResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make("name")->searchable(),
+                Tables\Columns\TextColumn::make("from_date")->searchable(),
+                Tables\Columns\TextColumn::make("to_date")->searchable(),
+                Tables\Columns\TextColumn::make("total_holidays"),
             ])
             ->filters([
                 //
