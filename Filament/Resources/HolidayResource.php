@@ -31,7 +31,11 @@ class HolidayResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\Card::make([
+                    Forms\Components\TextInput::make("name")
+                        ->unique(fn($record)=>$record)
+                        ->required(),
+                ])->default(2)->columnSpan(2)
             ]);
     }
 
