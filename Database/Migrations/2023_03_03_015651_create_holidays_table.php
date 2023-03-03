@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('holidays', function (Blueprint $table) {
             $table->id();
             $table->string("name");
+            $table->double("total_holidays")->default(0);
             $table->date("from_date")->nullable();
             $table->date("to_date")->nullable();
             $table->longText("properties")->nullable();

@@ -35,7 +35,10 @@ class HolidayResource extends Resource
                     Forms\Components\TextInput::make("name")
                         ->unique(fn($record)=>$record)
                         ->required(),
-                ])->columns(2)->columnSpan(2)
+                    Forms\Components\TextInput::make("total_holidays")
+                        ->default(0)
+                        ->disabled(),
+                ])->columns(2)->columnSpan(2),
             ]);
     }
 
