@@ -35,7 +35,7 @@ class HolidayResource extends Resource
                     Forms\Components\TextInput::make("name")
                         ->unique(fn($record)=>$record)
                         ->required(),
-                ])->default(2)->columnSpan(2)
+                ])->columns(2)->columnSpan(2)
             ]);
     }
 
