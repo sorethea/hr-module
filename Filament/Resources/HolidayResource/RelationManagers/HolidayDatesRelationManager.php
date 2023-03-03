@@ -24,6 +24,8 @@ class HolidayDatesRelationManager extends RelationManager
                     ->maxLength(255),
                 Forms\Components\DatePicker::make('holiday_date')
                     ->required(),
+                Forms\Components\Toggle::make("half_day")
+                    ->default(false),
             ]);
     }
 
@@ -33,6 +35,7 @@ class HolidayDatesRelationManager extends RelationManager
             ->columns([
                 Tables\Columns\TextColumn::make('name')->label('Description')->searchable(),
                 Tables\Columns\TextColumn::make('holiday_date'),
+                Tables\Columns\BooleanColumn::make("half_day"),
             ])
             ->filters([
                 //
