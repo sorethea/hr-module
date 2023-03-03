@@ -12,6 +12,7 @@ class Holiday extends Model
 
     protected $fillable = [
         'name',
+        'total_holidays',
         'from_date',
         'to_date',
         'properties',
