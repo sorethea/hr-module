@@ -69,7 +69,7 @@ class HolidayResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\HolidayDatesRelationManager::class,
         ];
     }
 
