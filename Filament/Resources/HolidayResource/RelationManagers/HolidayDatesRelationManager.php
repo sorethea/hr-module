@@ -46,7 +46,7 @@ class HolidayDatesRelationManager extends RelationManager
                     ->color('success')
                     ->label("New weekly holiday")
                     ->action(function ($record){
-                        info(json_encode($record->from_date));
+                        info(json_encode($this->getTableRecord()));
                     })
                     ->form([
                         Forms\Components\Group::make([
