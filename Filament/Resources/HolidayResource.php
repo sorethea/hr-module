@@ -38,6 +38,10 @@ class HolidayResource extends Resource
                     Forms\Components\TextInput::make("total_holidays")
                         ->default(0)
                         ->disabled(),
+                    Forms\Components\DatePicker::make("from_date")
+                        ->required(),
+                    Forms\Components\DatePicker::make("to_date")
+                        ->required(),
                 ])->columns(2)->columnSpan(2),
             ]);
     }
