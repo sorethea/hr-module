@@ -49,7 +49,7 @@ class HolidayDatesRelationManager extends RelationManager
 
                     })
                     ->form([
-                        Forms\Components\Card::make([
+                        Forms\Components\Group::make([
                             Forms\Components\Select::make("weekly_off")
                                 ->options([
                                     "Monday",
