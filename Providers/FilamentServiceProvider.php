@@ -8,6 +8,7 @@ use Filament\PluginServiceProvider;
 use Modules\HR\Filament\Pages\HRSettingPage;
 use Modules\HR\Filament\Resources\CompanyResource;
 use Modules\HR\Filament\Resources\EmployeeResource;
+use Modules\HR\Filament\Resources\HolidayResource;
 use Spatie\LaravelPackageTools\Package;
 use Modules\HR\Filament\Pages\HRPage;
 
@@ -23,6 +24,7 @@ class FilamentServiceProvider extends PluginServiceProvider
     protected array $resources =[
         CompanyResource::class,
         EmployeeResource::class,
+        HolidayResource::class,
     ];
     public function configurePackage(Package $package): void
     {

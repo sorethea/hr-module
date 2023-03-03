@@ -30,6 +30,7 @@ class PermissionTableSeeder extends Seeder
             "hrs",
             "employees",
             "companies",
+            "holidays",
         ];
         foreach ($models as $model){
             $levels = [
