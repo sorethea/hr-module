@@ -13,6 +13,9 @@ return [
         'Employee'=>[
             'icon'=>'heroicon-o-user-group'
         ],
+        'Holiday'=>[
+            'icon'=>'heroicon-o-clipboard-list'
+        ],
     ],
     'navigation'=>[
         'name' => 'Human Resources',
