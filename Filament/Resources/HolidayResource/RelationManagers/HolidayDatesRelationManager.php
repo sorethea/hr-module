@@ -62,7 +62,7 @@ class HolidayDatesRelationManager extends RelationManager
                                 ->default(false),
                         ])->columns(2)
                     ]),
-                Tables\Actions\CreateAction::make(),
+                Tables\Actions\CreateAction::make()->after(fn()=>redirect(request()->header("Referer"))),
             ])
             ->actions([
                 Tables\Actions\EditAction::make()->after(function (){
