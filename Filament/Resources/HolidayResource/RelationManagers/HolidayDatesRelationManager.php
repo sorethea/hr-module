@@ -54,7 +54,7 @@ class HolidayDatesRelationManager extends RelationManager
                     ->form([
                         Forms\Components\Group::make([
                             Forms\Components\Select::make("weekly_off")
-                                ->options(\Holiday::$isDayOfWeekList)
+                                ->options(\Holiday::getDayOfWeekList())
                                 ->searchable()
                                 ->required(),
                             Forms\Components\Toggle::make("half_day")

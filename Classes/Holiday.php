@@ -8,7 +8,10 @@ use Modules\HR\Models\HolidayDate;
 
 class Holiday
 {
-    public static array $isDayOfWeekList = [
+    /**
+     * @var array|string[]
+     */
+    private static array $isDayOfWeekList = [
         "isSunday" => "Sunday",
         "isMonday" => "Monday",
         "isTuesday" => "Tuesday",
@@ -18,10 +21,10 @@ class Holiday
         "isSaturday" => "Saturday"
     ];
 
-//    public static function getDayOfWeekList(){
-//
-//        return self::$isDayOfWeekList;
-//    }
+    public static function getDayOfWeekList(): array
+    {
+        return self::$isDayOfWeekList;
+    }
     public static function generatWeekDayHolidays(Holiday $holiday, bool $isHalfDay,string $isDayOfWeek){
         $fromDate = $holiday->from_date;
         $toDate = $holiday->to_date;
