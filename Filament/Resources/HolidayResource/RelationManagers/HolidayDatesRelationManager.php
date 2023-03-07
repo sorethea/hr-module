@@ -9,6 +9,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Model;
 use phpDocumentor\Reflection\Types\This;
+use function Termwind\render;
 
 class HolidayDatesRelationManager extends RelationManager
 {
@@ -67,7 +68,8 @@ class HolidayDatesRelationManager extends RelationManager
             ])
             ->actions([
                 Tables\Actions\EditAction::make()->after(function (){
-                    redirect(request()->header("Referer"));
+                    render(request()->header("Referer"));
+                    //redirect(request()->header("Referer"));
                 }),
                 Tables\Actions\DeleteAction::make()->after(function (){
                     redirect(request()->header("Referer"));
