@@ -13,41 +13,69 @@ class HolidayDate extends Model
     protected static function booted()
     {
         static::created(function ($model){
-            $holiday = $model->holiday;
-            if($model->half_day){
-                $holiday->total_holidays +=0.5;
-            }else{
-                $holiday->total_holidays +=1;
+            try {
+                \DB::beginTransaction();
+                $holiday = $model->holiday;
+                if($model->half_day){
+                    $holiday->total_holidays +=0.5;
+                }else{
+                    $holiday->total_holidays +=1;
+                }
+                $holiday->save();
+                \DB::commit();
+            }catch (\Throwable $exception){
+                \DB::rollBack();
             }
-            $holiday->save();
+
         });
         static::updated(function ($model){
-            $holiday = $model->holiday;
-            if($model->half_day){
-                $holiday->total_holidays +=0.5;
-            }else{
-                $holiday->total_holidays +=1;
+            try {
+                \DB::beginTransaction();
+                $holiday = $model->holiday;
+                if($model->half_day){
+                    $holiday->total_holidays +=0.5;
+                }else{
+                    $holiday->total_holidays +=1;
+                }
+                $holiday->save();
+                \DB::commit();
+            }catch (\Throwable $exception){
+                \DB::rollBack();
             }
-            $holiday->save();
+
         });
         static::updating(function ($model){
-            $old = self::find($model->id);
-            $holiday = $model->holiday;
-            if($old->half_day){
-                $holiday->total_holidays -=0.5;
-            }else{
-                $holiday->total_holidays -=1;
+            try {
+                \DB::beginTransaction();
+                $old = self::find($model->id);
+                $holiday = $model->holiday;
+                if($old->half_day){
+                    $holiday->total_holidays -=0.5;
+                }else{
+                    $holiday->total_holidays -=1;
+                }
+                $holiday->save();
+                \DB::commit();
+            }catch (\Throwable $exception){
+                \DB::rollBack();
             }
-            $holiday->save();
+
         });
         static::deleted(function ($model){
-            $holiday = $model->holiday;
-            if($model->half_day){
-                $holiday->total_holidays -=0.5;
-            }else{
-                $holiday->total_holidays -=1;
+            try {
+                \DB::beginTransaction();
+                $holiday = $model->holiday;
+                if($model->half_day){
+                    $holiday->total_holidays -=0.5;
+                }else{
+                    $holiday->total_holidays -=1;
+                }
+                $holiday->save();
+                \DB::commit();
+            }catch (\Throwable $exception){
+                \DB::rollBack();
             }
-            $holiday->save();
+
         });
     }
 
