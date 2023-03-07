@@ -14,7 +14,7 @@
                 "Modules\\HR\\Providers\\HRServiceProvider"
             ],
             "aliases": {
-
+                "Holiday": "Modules\\HR\\Facades\\Holiday"
             }
         }
     },

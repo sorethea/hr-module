@@ -48,20 +48,13 @@ class HolidayDatesRelationManager extends RelationManager
                     ->color('success')
                     ->label("New weekly holiday")
                     ->action(function (RelationManager $livewire){
-                        info(json_encode($livewire->ownerRecord));
+                        $ownerRecord = $livewire->ownerRecord;
+
                     })
                     ->form([
                         Forms\Components\Group::make([
                             Forms\Components\Select::make("weekly_off")
-                                ->options([
-                                    "Monday",
-                                    "Tuesday",
-                                    "Wednesday",
-                                    "Thursday",
-                                    "Friday",
-                                    "Saturday",
-                                    "Sunday",
-                                ])
+                                ->options(\Holiday::$isDayOfWeekList)
                                 ->searchable()
                                 ->required(),
                             Forms\Components\Toggle::make("half_day")
