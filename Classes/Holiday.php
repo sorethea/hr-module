@@ -32,6 +32,7 @@ class Holiday
         $fromDate = $holiday->from_date;
         $toDate = $holiday->to_date;
         $dates =CarbonPeriod::between($fromDate,$toDate)->filter(function (Carbon $date, string $dayOfWeek){
+            info($dayOfWeek);
             return match ($dayOfWeek) {
                 "Monday" => $date->isMonday(),
                 "Tuesday" => $date->isTuesday(),
