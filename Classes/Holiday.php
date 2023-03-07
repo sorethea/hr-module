@@ -23,21 +23,21 @@ class Holiday
         "Friday" => "Friday",
         "Saturday" => "Saturday"
     ];
-    private string $dayOfWeek;
+    private static string $dayOfWeek;
 
     public static function getDayOfWeekList(): array
     {
         return self::$isDayOfWeekList;
     }
 
-    protected function setDayOfWeek($dayOfWeek): void
+    protected static function setDayOfWeek($dayOfWeek): void
     {
-        $this->dayOfWeek = $dayOfWeek;
+        self::$dayOfWeek = $dayOfWeek;
     }
 
-    protected function getDayOfWeek(): string
+    protected static function getDayOfWeek(): string
     {
-        return $this->dayOfWeek;
+        return self::$dayOfWeek;
     }
     public static function generateWeekDayHolidays(Model $holiday, bool $isHalfDay, string $dayOfWeek): void
     {
