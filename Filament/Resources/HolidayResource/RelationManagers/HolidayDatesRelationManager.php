@@ -16,6 +16,7 @@ class HolidayDatesRelationManager extends RelationManager
 
     protected static ?string $recordTitleAttribute = 'name';
 
+
     public static function form(Form $form): Form
     {
         return $form
@@ -76,6 +77,7 @@ class HolidayDatesRelationManager extends RelationManager
                 Tables\Actions\DeleteBulkAction::make()->after(function (){
                     redirect(request()->header("Referer"));
                 }),
-            ]);
+            ])
+            ->defaultSort('id','desc');
     }
 }
