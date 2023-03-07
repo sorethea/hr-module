@@ -30,15 +30,6 @@ class HolidayDate extends Model
             }
             $holiday->save();
         });
-//        static::updating(function ($model){
-//            $holiday = $model->holiday;
-//            if($model->half_day){
-//                $holiday->total_holidays -=0.5;
-//            }else{
-//                $holiday->total_holidays -=1;
-//            }
-//            $holiday->save();
-//        });
         static::deleted(function ($model){
             $holiday = $model->holiday;
             if($model->half_day){
