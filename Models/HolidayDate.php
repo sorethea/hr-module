@@ -10,6 +10,46 @@ class HolidayDate extends Model
 {
     use HasFactory;
 
+    protected static function booted()
+    {
+        static::created(function ($model){
+            $holiday = $model->holiday;
+            if($model->half_day){
+                $holiday->total_holidays +=0.5;
+            }else{
+                $holiday->total_holidays +=1;
+            }
+            $holiday->save();
+        });
+        static::updated(function ($model){
+            $holiday = $model->holiday;
+            if($model->half_day){
+                $holiday->total_holidays +=0.5;
+            }else{
+                $holiday->total_holidays +=1;
+            }
+            $holiday->save();
+        });
+        static::update(function ($model){
+            $holiday = $model->holiday;
+            if($model->half_day){
+                $holiday->total_holidays -=0.5;
+            }else{
+                $holiday->total_holidays -=1;
+            }
+            $holiday->save();
+        });
+        static::deleted(function ($model){
+            $holiday = $model->holiday;
+            if($model->half_day){
+                $holiday->total_holidays -=0.5;
+            }else{
+                $holiday->total_holidays -=1;
+            }
+            $holiday->save();
+        });
+    }
+
     protected $fillable = [
         'name',
         'holiday_id',

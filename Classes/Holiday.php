@@ -61,12 +61,6 @@ class Holiday
                 "holiday_date" => $date->format('Y-m-d'),
                 "half_day" => $isHalfDay,
             ]);
-            if($isHalfDay){
-                $holiday->total_holidays += 0.5;
-            }else{
-                $holiday->total_holidays +=1;
-            }
-            $holiday->save();
         }
     }
 }
