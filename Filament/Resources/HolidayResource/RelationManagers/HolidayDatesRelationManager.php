@@ -47,9 +47,9 @@ class HolidayDatesRelationManager extends RelationManager
                     ->button()
                     ->color('success')
                     ->label("New weekly holiday")
-                    ->action(function (RelationManager $livewire){
-                        $ownerRecord = $livewire->ownerRecord;
-
+                    ->action(function (RelationManager $livewire, array $data){
+                        $holiday = $livewire->ownerRecord;
+                        \Holiday::generateWeekDayHolidays($holiday,$data->half_day,$data->weekly_off);
                     })
                     ->form([
                         Forms\Components\Group::make([

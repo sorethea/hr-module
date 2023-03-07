@@ -25,7 +25,8 @@ class Holiday
     {
         return self::$isDayOfWeekList;
     }
-    public static function generatWeekDayHolidays(Holiday $holiday, bool $isHalfDay,string $isDayOfWeek){
+    public static function generateWeekDayHolidays(Holiday $holiday, bool $isHalfDay,string $isDayOfWeek): void
+    {
         $fromDate = $holiday->from_date;
         $toDate = $holiday->to_date;
         $dates =CarbonPeriod::between($fromDate,$toDate)->filter($isDayOfWeek);
