@@ -26,7 +26,7 @@ class Holiday
     {
         return self::$isDayOfWeekList;
     }
-    public static function generateWeekDayHolidays(Model $holiday, bool $isHalfDay,string $isDayOfWeek): void
+    public static function generateWeekDayHolidays(Model $holiday, bool $isHalfDay,string $isDayOfWeek,string $dayOfWeek): void
     {
         $fromDate = $holiday->from_date;
         $toDate = $holiday->to_date;
@@ -34,7 +34,7 @@ class Holiday
         foreach ($dates as $date){
             HolidayDate::firstOrCreate([
                 'holiday_id' => $holiday->id,
-                "name" => self::getDayOfWeekList()[$isDayOfWeek],
+                "name" => $dayOfWeek,
                 "holiday_date" => $date->format('Y-m-d'),
                 "half_day" => $isHalfDay,
             ]);
