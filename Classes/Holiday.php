@@ -34,7 +34,7 @@ class Holiday
         foreach ($dates as $date){
             HolidayDate::firstOrCreate([
                 'holiday_id' => $holiday->id,
-                "name" => self::$isDayOfWeekList[$isDayOfWeek],
+                "name" => self::getDayOfWeekList()[$isDayOfWeek],
                 "holiday_date" => $date->format('Y-m-d'),
                 "half_day" => $isHalfDay,
             ]);
