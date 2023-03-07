@@ -14,25 +14,33 @@ class Holiday
      * @var array|string[]
      */
     private static array $isDayOfWeekList = [
-        "isSunday" => "Sunday",
-        "isMonday" => "Monday",
-        "isTuesday" => "Tuesday",
-        "isWednesday" => "Wednesday",
-        "isThursday" => "Thursday",
-        "isFriday" => "Friday",
-        "isSaturday" => "Saturday"
+        "Sunday" => "Sunday",
+        "Monday" => "Monday",
+        "Tuesday" => "Tuesday",
+        "Wednesday" => "Wednesday",
+        "Thursday" => "Thursday",
+        "Friday" => "Friday",
+        "Saturday" => "Saturday"
     ];
 
     public static function getDayOfWeekList(): array
     {
         return self::$isDayOfWeekList;
     }
-    public static function generateWeekDayHolidays(Model $holiday, bool $isHalfDay, string $isDayOfWeek, string $dayOfWeek): void
+    public static function generateWeekDayHolidays(Model $holiday, bool $isHalfDay, string $dayOfWeek): void
     {
         $fromDate = $holiday->from_date;
         $toDate = $holiday->to_date;
-        $dates =CarbonPeriod::between($fromDate,$toDate)->filter(function (Carbon $date,string $isDayOfWeek){
-            return $date->$isDayOfWeek();
+        $dates =CarbonPeriod::between($fromDate,$toDate)->filter(function (Carbon $date, string $dayOfWeek){
+            return match ($dayOfWeek) {
+                "Monday" => $date->isMonday(),
+                "Tuesday" => $date->isTuesday(),
+                "Wednesday" => $date->isWednesday(),
+                "Thursday" => $date->isThursday(),
+                "Friday" => $date->isFriday(),
+                "Saturday" => $date->isSaturday(),
+                default => $date->isSunday(),
+            };
         });
         foreach ($dates as $date){
             HolidayDate::firstOrCreate([
