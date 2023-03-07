@@ -7,7 +7,6 @@ use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 use Illuminate\Database\Eloquent\Model;
 use Modules\HR\Models\HolidayDate;
-use phpDocumentor\Reflection\Types\This;
 
 class Holiday
 {
