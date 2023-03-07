@@ -52,8 +52,7 @@ class HolidayDatesRelationManager extends RelationManager
                     ->action(function (RelationManager $livewire, array $data){
                         $holiday = $livewire->ownerRecord;
                         \Holiday::generateWeekDayHolidays($holiday,$data["half_day"],$data["weekly_off"]);
-                        //redirect(request()->header("Referer"));
-                        info(json_encode($livewire->render($livewire->ownerRecord)));
+                        redirect(request()->header("Referer"));
                     })
                     ->form([
                         Forms\Components\Group::make([
@@ -65,7 +64,7 @@ class HolidayDatesRelationManager extends RelationManager
                                 ->default(false),
                         ])->columns(2)
                     ]),
-                Tables\Actions\CreateAction::make()->after(fn()=>redirect(request()->header("Referer"))),
+                Tables\Actions\CreateAction::make()->after(fn()=>redirect(request()->header("Referer")))->disableCreateAnother(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make()->after(function (){
