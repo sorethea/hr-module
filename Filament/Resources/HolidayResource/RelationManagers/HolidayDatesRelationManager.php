@@ -53,7 +53,7 @@ class HolidayDatesRelationManager extends RelationManager
                         $holiday = $livewire->ownerRecord;
                         \Holiday::generateWeekDayHolidays($holiday,$data["half_day"],$data["weekly_off"]);
                         //redirect(request()->header("Referer"));
-                        info(json_encode($livewire->getViewData()));
+                        info(json_encode($livewire->render($livewire->ownerRecord)));
                     })
                     ->form([
                         Forms\Components\Group::make([
