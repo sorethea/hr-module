@@ -4,6 +4,7 @@ namespace Modules\HR\Classes;
 
 
 use Carbon\CarbonPeriod;
+use Illuminate\Database\Eloquent\Model;
 use Modules\HR\Models\HolidayDate;
 
 class Holiday
@@ -25,7 +26,7 @@ class Holiday
     {
         return self::$isDayOfWeekList;
     }
-    public static function generateWeekDayHolidays(Holiday $holiday, bool $isHalfDay,string $isDayOfWeek): void
+    public static function generateWeekDayHolidays(Model $holiday, bool $isHalfDay,string $isDayOfWeek): void
     {
         $fromDate = $holiday->from_date;
         $toDate = $holiday->to_date;
