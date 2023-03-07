@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 use Illuminate\Database\Eloquent\Model;
 use Modules\HR\Models\HolidayDate;
+use phpDocumentor\Reflection\Types\This;
 
 class Holiday
 {
@@ -22,18 +23,29 @@ class Holiday
         "Friday" => "Friday",
         "Saturday" => "Saturday"
     ];
+    private string $dayOfWeek;
 
     public static function getDayOfWeekList(): array
     {
         return self::$isDayOfWeekList;
     }
+
+    protected function setDayOfWeek($dayOfWeek): void
+    {
+        $this->dayOfWeek = $dayOfWeek;
+    }
+
+    protected function getDayOfWeek(): string
+    {
+        return $this->dayOfWeek;
+    }
     public static function generateWeekDayHolidays(Model $holiday, bool $isHalfDay, string $dayOfWeek): void
     {
         $fromDate = $holiday->from_date;
         $toDate = $holiday->to_date;
-        $dates =CarbonPeriod::between($fromDate,$toDate)->filter(function (Carbon $date, string $dayOfWeek){
-            info($dayOfWeek);
-            return match ($dayOfWeek) {
+        self::setDayOfWeek($dayOfWeek);
+        $dates =CarbonPeriod::create($fromDate,$toDate)->filter(function (Carbon $date){
+            return match (self::getDayOfWeek()) {
                 "Monday" => $date->isMonday(),
                 "Tuesday" => $date->isTuesday(),
                 "Wednesday" => $date->isWednesday(),
