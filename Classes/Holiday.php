@@ -39,7 +39,7 @@ class Holiday
                 "Thursday" => $date->isThursday(),
                 "Friday" => $date->isFriday(),
                 "Saturday" => $date->isSaturday(),
-                default => $date->isSunday(),
+                "Sunday" => $date->isSunday(),
             };
         });
         foreach ($dates as $date){
