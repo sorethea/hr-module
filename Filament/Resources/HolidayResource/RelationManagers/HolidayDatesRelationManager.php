@@ -65,11 +65,17 @@ class HolidayDatesRelationManager extends RelationManager
                 Tables\Actions\CreateAction::make(),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\EditAction::make()->after(function (){
+                    redirect(request()->header("Referer"));
+                }),
+                Tables\Actions\DeleteAction::make()->after(function (){
+                    redirect(request()->header("Referer"));
+                }),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make()->after(function (){
+                    redirect(request()->header("Referer"));
+                }),
             ]);
     }
 }
