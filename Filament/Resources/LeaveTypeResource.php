@@ -31,7 +31,10 @@ class LeaveTypeResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make("name")
+                    ->unique("leave_types","name",fn($record)=>$record)
+                    ->required(),
+
             ]);
     }
 

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("name");
             $table->double("max_allocation_allowed")->default(0);
             $table->double("max_consecutive_allowed")->default(0);
+            $table->double("applicable_after")->default(0);
             $table->boolean("carry_forward")->default(false);
             $table->boolean("without_pay")->default(false);
             $table->boolean("allow_encashment")->default(false);
