@@ -16,6 +16,9 @@ return [
         'Holiday'=>[
             'icon'=>'heroicon-o-clipboard-list'
         ],
+        'LeaveType'=>[
+            'icon'=>'heroicon-o-folder'
+        ],
     ],
     'navigation'=>[
         'name' => 'Human Resources',

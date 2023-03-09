@@ -9,6 +9,7 @@ use Modules\HR\Filament\Pages\HRSettingPage;
 use Modules\HR\Filament\Resources\CompanyResource;
 use Modules\HR\Filament\Resources\EmployeeResource;
 use Modules\HR\Filament\Resources\HolidayResource;
+use Modules\HR\Filament\Resources\LeaveTypeResource;
 use Spatie\LaravelPackageTools\Package;
 use Modules\HR\Filament\Pages\HRPage;
 
@@ -25,6 +26,7 @@ class FilamentServiceProvider extends PluginServiceProvider
         CompanyResource::class,
         EmployeeResource::class,
         HolidayResource::class,
+        LeaveTypeResource::class,
     ];
     public function configurePackage(Package $package): void
     {
