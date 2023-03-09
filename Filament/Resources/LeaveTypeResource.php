@@ -31,10 +31,18 @@ class LeaveTypeResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make("name")
-                    ->unique("leave_types","name",fn($record)=>$record)
-                    ->required(),
+                Forms\Components\Card::make([
+                    Forms\Components\TextInput::make("name")
+                        ->unique('leave_types','name',fn($record)=>$record)
+                        ->required(),
+                    Forms\Components\TextInput::make("max_allocation_allowed")
+                        ->default(0),
+                    Forms\Components\TextInput::make("applicable_after")
+                        ->default(0),
+                    Forms\Components\TextInput::make("max_consecutive_allowed")
+                        ->default(0),
 
+                ])->columns(2)->columnSpan(2),
             ]);
     }
 
