@@ -54,7 +54,14 @@ class LeaveTypeResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make("name")->searchable()->sortable(),
+                Tables\Columns\TextColumn::make("max_allocation_allowed"),
+                Tables\Columns\TextColumn::make("applicable_after"),
+                Tables\Columns\TextColumn::make("max_consecutive_allowed"),
+                Tables\Columns\BooleanColumn::make("carry_forward"),
+                Tables\Columns\BooleanColumn::make("without_pay"),
+                Tables\Columns\BooleanColumn::make("allow_encashment"),
+                Tables\Columns\BooleanColumn::make("earned_leave"),
             ])
             ->filters([
                 //
