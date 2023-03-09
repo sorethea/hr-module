@@ -57,11 +57,11 @@ class LeaveTypeResource extends Resource
                 Tables\Columns\TextColumn::make("name")->searchable()->sortable(),
                 Tables\Columns\TextColumn::make("max_allocation_allowed"),
                 Tables\Columns\TextColumn::make("applicable_after"),
-                Tables\Columns\TextColumn::make("max_consecutive_allowed")->toggleable(),
-                Tables\Columns\BooleanColumn::make("carry_forward")->toggleable(),
-                Tables\Columns\BooleanColumn::make("without_pay")->toggleable(),
-                Tables\Columns\BooleanColumn::make("allow_encashment")->toggleable(),
-                Tables\Columns\BooleanColumn::make("earned_leave"),
+                Tables\Columns\TextColumn::make("max_consecutive_allowed")->toggleable()->toggledHiddenByDefault(),
+                Tables\Columns\BooleanColumn::make("carry_forward")->toggleable()->toggledHiddenByDefault(),
+                Tables\Columns\BooleanColumn::make("without_pay")->toggleable()->toggledHiddenByDefault(),
+                Tables\Columns\BooleanColumn::make("allow_encashment")->toggleable()->toggledHiddenByDefault(),
+                Tables\Columns\BooleanColumn::make("earned_leave")->toggleable()->toggledHiddenByDefault(),
             ])
             ->filters([
                 //
