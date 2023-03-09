@@ -38,10 +38,14 @@ class LeaveTypeResource extends Resource
                     Forms\Components\TextInput::make("max_allocation_allowed")
                         ->default(0),
                     Forms\Components\TextInput::make("applicable_after")
+                        ->helperText("Working days")
                         ->default(0),
                     Forms\Components\TextInput::make("max_consecutive_allowed")
                         ->default(0),
-
+                    Forms\Components\Toggle::make("carry_forward")->default(false),
+                    Forms\Components\Toggle::make("without_pay")->default(false),
+                    Forms\Components\Toggle::make("allow_encashment")->default(false),
+                    Forms\Components\Toggle::make("earned_leave")->default(false),
                 ])->columns(2)->columnSpan(2),
             ]);
     }
