@@ -13,6 +13,7 @@ class LeaveType extends Model
         'name',
         'max_allocation_allowed',
         'max_consecutive_allowed',
+        'applicable_after',
         'carry_forward',
         'without_pay',
         'allow_encashment',
