@@ -6,6 +6,13 @@ return [
         'label'=>'HR Settings',
         'icon'=>'heroicon-o-cog'
     ],
+    'resources'=>[
+        "company"=>[
+            "name"=>"Company",
+            'icon'=>'heroicon-o-library',
+        ],
+        ""
+    ],
     'models'=>[
         'Company'=>[
             'icon'=>'heroicon-o-library'
