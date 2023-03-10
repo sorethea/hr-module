@@ -18,6 +18,7 @@ class LeaveType extends Model
         'without_pay',
         'allow_encashment',
         'earned_leave',
+        'compensatory',
     ];
 
     protected static function newFactory()

@@ -46,6 +46,7 @@ class LeaveTypeResource extends Resource
                     Forms\Components\Toggle::make("without_pay")->default(false),
                     Forms\Components\Toggle::make("allow_encashment")->default(false),
                     Forms\Components\Toggle::make("earned_leave")->default(false),
+                    Forms\Components\Toggle::make("compensatory")->default(false),
                 ])->columns(2)->columnSpan(2),
             ]);
     }
@@ -62,6 +63,7 @@ class LeaveTypeResource extends Resource
                 Tables\Columns\BooleanColumn::make("without_pay")->toggleable()->toggledHiddenByDefault(),
                 Tables\Columns\BooleanColumn::make("allow_encashment")->toggleable()->toggledHiddenByDefault(),
                 Tables\Columns\BooleanColumn::make("earned_leave")->toggleable()->toggledHiddenByDefault(),
+                Tables\Columns\BooleanColumn::make("compensatory")->toggleable()->toggledHiddenByDefault(),
             ])
             ->filters([
                 //

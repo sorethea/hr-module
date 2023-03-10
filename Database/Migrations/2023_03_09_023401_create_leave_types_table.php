@@ -23,6 +23,7 @@ return new class extends Migration
             $table->boolean("without_pay")->default(false);
             $table->boolean("allow_encashment")->default(false);
             $table->boolean("earned_leave")->default(false);
+            $table->boolean("compensatory")->default(false);
             $table->timestamps();
         });
     }
