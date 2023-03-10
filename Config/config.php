@@ -31,6 +31,10 @@ return [
         'name' => 'Human Resources',
         'enabled' => true,
     ],
+    'setting-navigation'=>[
+        'name' => 'Settings',
+        'enabled' => true,
+    ],
     'leave-navigation'=>[
         'name' => 'Leave',
         'enabled' => true,
