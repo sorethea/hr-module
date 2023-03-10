@@ -22,6 +22,10 @@ return new class extends Migration
             $table->string("employment_type")->nullable();
             $table->boolean('is_system_user')->default(false);
             $table->foreignId("user_id")->nullable();
+            $table->foreignId("report_to")->nullable();
+            $table->foreignId("expense_request_approve")->nullable();
+            $table->foreignId("leave_request_approve")->nullable();
+            $table->foreignId("shift_request_approve")->nullable();
             $table->date("date_of_birth");
             $table->date("date_of_joining");
             $table->longText("contact_details")->nullable();
