@@ -26,7 +26,7 @@ class EmployeeResource extends Resource
 
     protected static function getNavigationGroup(): ?string
     {
-        return config('hr.navigation.name');
+        return config('hr.hr-navigation.name');
     }
 
     public static function form(Form $form): Form

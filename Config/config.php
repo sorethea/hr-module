@@ -27,8 +27,12 @@ return [
             'icon'=>'heroicon-o-folder'
         ],
     ],
-    'navigation'=>[
+    'hr-navigation'=>[
         'name' => 'Human Resources',
+        'enabled' => true,
+    ],
+    'leave-navigation'=>[
+        'name' => 'Leave',
         'enabled' => true,
     ],
 ];

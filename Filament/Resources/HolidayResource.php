@@ -24,7 +24,7 @@ class HolidayResource extends Resource
 
     protected static function getNavigationGroup(): ?string
     {
-        return config('hr.navigation.name');
+        return config('hr.leave-navigation.name');
     }
 
     public static function form(Form $form): Form
