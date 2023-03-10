@@ -28,7 +28,7 @@ class HRSettingPage extends SettingsPage
 
     protected static function getNavigationGroup(): ?string
     {
-        return config('hr.navigation.name');
+        return config('hr.hr-navigation.name');
     }
 
     protected static string $settings = HRSetting::class;
