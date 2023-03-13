@@ -10,6 +10,7 @@ use Modules\HR\Filament\Resources\CompanyResource;
 use Modules\HR\Filament\Resources\EmployeeResource;
 use Modules\HR\Filament\Resources\HolidayResource;
 use Modules\HR\Filament\Resources\LeaveTypeResource;
+use Modules\HR\Filament\Widgets\EmployeeWidget;
 use Spatie\LaravelPackageTools\Package;
 use Modules\HR\Filament\Pages\HRPage;
 
@@ -27,6 +28,9 @@ class FilamentServiceProvider extends PluginServiceProvider
         EmployeeResource::class,
         HolidayResource::class,
         LeaveTypeResource::class,
+    ];
+    protected array $widgets =[
+        EmployeeWidget::class,
     ];
     public function configurePackage(Package $package): void
     {
