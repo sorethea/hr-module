@@ -2,6 +2,7 @@
 
 namespace Modules\HR\Providers;
 
+use Filament\Widgets\AccountWidget;
 use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Support\ServiceProvider;
 use Modules\HR\Filament\Widgets\EmployeeWidget;
@@ -29,7 +30,7 @@ class HRServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
         //$this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Settings'));
         \Lam::registerWidgets([
-            //EmployeeWidget::class,
+            AccountWidget::class,
         ]);
     }
 
