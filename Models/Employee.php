@@ -70,7 +70,12 @@ class Employee extends Model implements HasMedia
     public function company(): BelongsTo{
         return $this->belongsTo(Company::class);
     }
-
+    public function designation(): BelongsTo{
+        return $this->belongsTo(Designation::class);
+    }
+    public function department(): BelongsTo{
+        return $this->belongsTo(Department::class);
+    }
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')

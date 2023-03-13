@@ -82,6 +82,25 @@ class EmployeeResource extends Resource
                             Forms\Components\Select::make("employment_type")
                                 ->searchable()
                                 ->options(app(HRSetting::class)->employment_type),
+                            Forms\Components\BelongsToSelect::make("department")
+                                ->relationship("department", "name")
+                                ->searchable()
+                                ->createOptionForm([
+                                    Forms\Components\Group::make([
+                                        Forms\Components\TextInput::make("name")
+                                            ->unique("companies","name",fn($record)=>$record)
+                                            ->required(),
+                                        Forms\Components\TextInput::make("abbr")
+                                            ->unique("companies","abbr",fn($record)=>$record)
+                                            ->required(),
+                                        Forms\Components\BelongsToSelect::make("parent")
+                                            ->relationship("parent","name",fn($query)=>$query->where("is_group",true))
+                                            ->nullable(),
+                                        Forms\Components\Toggle::make("is_group")
+                                            ->default(false),
+                                    ])->columns(2),
+                                ])
+                                ->required(),
                             Forms\Components\DatePicker::make("date_of_birth")
                                 ->required(),
                             Forms\Components\DatePicker::make("date_of_joining")
