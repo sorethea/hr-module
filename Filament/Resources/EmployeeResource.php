@@ -88,6 +88,9 @@ class EmployeeResource extends Resource
                                 ->required(),
                             Forms\Components\Toggle::make("active")
                                 ->default(true),
+                            Forms\Components\SpatieMediaLibraryFileUpload::make("avatar")
+                                ->collection("avatar")
+                                ->nullable(),
                         ])->columns(2),
                     ]),
                     Forms\Components\Wizard\Step::make("contact details")->schema([
