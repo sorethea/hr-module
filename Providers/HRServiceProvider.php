@@ -2,9 +2,9 @@
 
 namespace Modules\HR\Providers;
 
+use App\Filament\Widgets\EmployeeWidget;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
-use Modules\HR\Filament\Widgets\EmployeeWidget;
 
 class HRServiceProvider extends ServiceProvider
 {
