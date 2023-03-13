@@ -31,6 +31,7 @@ class HRServiceProvider extends ServiceProvider
         //$this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Settings'));
         \Lam::registerWidgets([
             //AccountWidget::class,
+            EmployeeWidget::class,
         ]);
     }
 
