@@ -5,8 +5,11 @@
             @endphp
 
             <div class="h-12 flex items-center space-x-4 rtl:space-x-reverse">
-                <x-filament::user-avatar :user="$user" />
-
+{{--                <x-filament::user-avatar :user="$user" />--}}
+                <img
+                    src="{{$user->getFirstMediaUrl('avatar')}}"
+                    class="rounded-full w-16 mb-2"
+                />
                 <div>
                     <h2 class="text-lg sm:text-xl font-bold tracking-tight">
                         {{ __('filament::widgets/account-widget.welcome', ['user' => \Filament\Facades\Filament::getUserName($user)]) }}
