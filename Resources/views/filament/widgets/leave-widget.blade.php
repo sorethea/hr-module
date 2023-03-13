@@ -17,7 +17,7 @@
                             src="{{$user->getFirstMediaUrl()}}"
                             class="rounded-full w-16 mb-2"
                         />
-                        <p class="font-semibold">Marko Denic</p>
+                        <p class="font-semibold">{{$user->name}}</p>
                         <p class="text-xs text-gray-400">Software Engineer</p>
                     </div>
                     <div class="items-center justify-center hidden sm:flex">
