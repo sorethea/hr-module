@@ -4,7 +4,7 @@
                 $user = \Filament\Facades\Filament::auth()->user();
             @endphp
 
-            <div class="h-12 flex items-center space-x-4 rtl:space-x-reverse">
+{{--            <div class="h-12 flex items-center space-x-4 rtl:space-x-reverse">
                 <x-filament::user-avatar :user="$user" />
 
                 <div>
@@ -26,6 +26,6 @@
                         </button>
                     </form>
                 </div>
-            </div>
+            </div>--}}
     </x-filament::card>
 </x-filament::widget>
