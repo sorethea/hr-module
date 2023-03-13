@@ -148,6 +148,7 @@ class EmployeeResource extends Resource
             ->columns([
                 Tables\Columns\SpatieMediaLibraryImageColumn::make("avatar")
                     ->collection("avatar")
+                    ->conversion("thumb")
                     ->rounded(),
                 Tables\Columns\TextColumn::make("first_name")->searchable(),
                 Tables\Columns\TextColumn::make("last_name")->searchable(),
