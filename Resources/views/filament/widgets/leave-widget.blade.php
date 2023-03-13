@@ -14,7 +14,7 @@
                 >
                     <div class="flex flex-col space-x-0 items-center">
                         <img
-                            src="{{$user->avatar}}"
+                            src="{{$user->getFirstMediaUrl()}}"
                             class="rounded-full w-16 mb-2"
                         />
                         <p class="font-semibold">Marko Denic</p>
