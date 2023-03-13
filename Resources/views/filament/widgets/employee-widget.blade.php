@@ -1,4 +1,4 @@
-<x-filament::widget>
+<x-filament::widget class="filament-account-widgets">
     <x-filament::card>
             @php
                 $user = \Filament\Facades\Filament::auth()->user();
