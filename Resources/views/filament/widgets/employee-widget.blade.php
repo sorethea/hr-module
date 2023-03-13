@@ -5,11 +5,12 @@
             @endphp
 
             <div class="h-12 flex items-center space-x-4 rtl:space-x-reverse">
-                @if($user->getFirstMediaUrl('avatar'))
-                    <img src="{{$user->getFirstMediaUrl('avatar')}}" class="rounded-full w-12 mb-2"/>
-                @else
-                    <x-filament::user-avatar :user="$user" />
-                @endif
+                <x-hr::user-avatar :user="$user" />
+{{--                @if($user->getFirstMediaUrl('avatar'))--}}
+{{--                    <img src="{{$user->getFirstMediaUrl('avatar')}}" class="rounded-full w-12 mb-2"/>--}}
+{{--                @else--}}
+{{--                    <x-filament::user-avatar :user="$user" />--}}
+{{--                @endif--}}
                 <div>
                     <h2 class="text-lg sm:text-xl font-bold tracking-tight">
                         {{ __('filament::widgets/account-widget.welcome', ['user' => \Filament\Facades\Filament::getUserName($user)]) }}
