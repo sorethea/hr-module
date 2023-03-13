@@ -11,6 +11,7 @@ use Modules\HR\Filament\Resources\EmployeeResource;
 use Modules\HR\Filament\Resources\HolidayResource;
 use Modules\HR\Filament\Resources\LeaveTypeResource;
 use Modules\HR\Filament\Widgets\EmployeeWidget;
+use Modules\HR\Filament\Widgets\LeaveWidget;
 use Spatie\LaravelPackageTools\Package;
 use Modules\HR\Filament\Pages\HRPage;
 
@@ -31,6 +32,7 @@ class FilamentServiceProvider extends PluginServiceProvider
     ];
     protected array $widgets =[
         EmployeeWidget::class,
+        LeaveWidget::class,
     ];
     public function configurePackage(Package $package): void
     {
