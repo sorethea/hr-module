@@ -14,7 +14,7 @@
                 >
                     <div class="flex flex-col space-x-0 items-center">
                         <img
-                            src="{{$user->getFirstMediaUrl()}}"
+                            src="{{$user->getFirstMediaUrl('avatar')}}"
                             class="rounded-full w-16 mb-2"
                         />
                         <p class="font-semibold">{{$user->name}}</p>
