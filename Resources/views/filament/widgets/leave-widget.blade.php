@@ -1,6 +1,8 @@
 <x-filament::widget>
     <x-filament::card>
-
+        @php
+            $user = \Filament\Facades\Filament::auth()->user();
+        @endphp
         <div
             class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12"
         >
@@ -12,7 +14,7 @@
                 >
                     <div class="flex flex-col space-x-0 items-center">
                         <img
-                            src="https://pbs.twimg.com/profile_images/1308385514744098816/oDXuaci__400x400.jpg"
+                            src="{{$user->avatar}}"
                             class="rounded-full w-16 mb-2"
                         />
                         <p class="font-semibold">Marko Denic</p>
