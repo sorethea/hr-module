@@ -8,7 +8,7 @@
                 <x-hr::employee-avatar :user="$user" />
                 <div>
                     <h2 class="text-lg sm:text-xl font-bold tracking-tight">
-                        {{ __('filament::widgets/account-widget.welcome', ['user' => \Filament\Facades\Filament::getUserName($user)]) }}
+                        {{ \Lam::getEmployeeName($user)??$user->name }}
                     </h2>
 
                     <form action="{{ route('filament.auth.logout') }}" method="post" class="text-sm">
