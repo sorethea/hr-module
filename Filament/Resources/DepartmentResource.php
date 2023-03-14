@@ -40,6 +40,8 @@ class DepartmentResource extends Resource
                     ->required(),
                 Forms\Components\Toggle::make("is_group")
                     ->default(false),
+                Forms\Components\Toggle::make("active")
+                    ->default(false),
             ]);
     }
 
