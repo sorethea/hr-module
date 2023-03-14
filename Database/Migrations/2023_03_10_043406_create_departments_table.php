@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId("company_id");
             $table->foreignId("parent_id")->nullable();
             $table->boolean("is_group")->default(false);
-            $table->boolean("active")->default(false);
+            $table->boolean("active")->default(true);
             $table->timestamps();
         });
     }

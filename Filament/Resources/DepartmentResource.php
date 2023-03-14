@@ -41,8 +41,6 @@ class DepartmentResource extends Resource
                         ->required(),
                     Forms\Components\Toggle::make("is_group")
                         ->default(false),
-                    Forms\Components\Toggle::make("active")
-                        ->default(false),
                 ])
                     ->columnSpan(2)
                     ->columns(2),
@@ -54,7 +52,12 @@ class DepartmentResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make("name")
+                    ->searchable(),
+                Tables\Columns\TextColumn::make("company")
+                    ->searchable(),
+                Tables\Columns\BooleanColumn::make("is_group"),
+                Tables\Columns\ToggleColumn::make("active"),
             ])
             ->filters([
                 //
