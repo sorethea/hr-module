@@ -31,17 +31,22 @@ class DepartmentResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make("name")
-                    ->unique("departments","name",fn($record)=>$record)
-                    ->required(),
-                Forms\Components\BelongsToSelect::make("company")
-                    ->relationship("company","name")
-                    ->searchable()
-                    ->required(),
-                Forms\Components\Toggle::make("is_group")
-                    ->default(false),
-                Forms\Components\Toggle::make("active")
-                    ->default(false),
+                Forms\Components\Card::make([
+                    Forms\Components\TextInput::make("name")
+                        ->unique("departments","name",fn($record)=>$record)
+                        ->required(),
+                    Forms\Components\BelongsToSelect::make("company")
+                        ->relationship("company","name")
+                        ->searchable()
+                        ->required(),
+                    Forms\Components\Toggle::make("is_group")
+                        ->default(false),
+                    Forms\Components\Toggle::make("active")
+                        ->default(false),
+                ])
+                    ->columnSpan(2)
+                    ->columns(2),
+
             ]);
     }
 
