@@ -23,8 +23,8 @@ class AuthServiceProvider extends ServiceProvider
         LeaveType::class => HRPolicy::class,
         Company::class => CompanyPolicy::class,
         Employee::class => EmployeePolicy::class,
-        Department::class => DepartmentPolicy::class,
-        Designation::class => DesignationPolicy::class,
+        Department::class => HRPolicy::class,
+        Designation::class => HRPolicy::class,
         HRSetting::class => HRPolicy::class,
 
     ];
