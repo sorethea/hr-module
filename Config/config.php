@@ -24,7 +24,7 @@ return [
             'icon'=>'heroicon-o-folder'
         ],
         'Designation'=>[
-            'icon'=>'heroicon-o-grid'
+            'icon'=>'heroicon-o-table'
         ],
         'Holiday'=>[
             'icon'=>'heroicon-o-clipboard-list'
