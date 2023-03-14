@@ -9,8 +9,11 @@ class Designation extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
-    
+    protected $fillable = [
+        "name",
+        "description"
+    ];
+
     protected static function newFactory()
     {
         return \Modules\HR\Database\factories\DesignationFactory::new();
