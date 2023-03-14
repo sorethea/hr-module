@@ -21,7 +21,7 @@ return [
             'icon'=>'heroicon-o-user-group'
         ],
         'Department'=>[
-            'icon'=>'heroicon-o-folder'
+            'icon'=>'heroicon-o-share'
         ],
         'Designation'=>[
             'icon'=>'heroicon-o-table'
