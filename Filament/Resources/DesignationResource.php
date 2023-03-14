@@ -23,6 +23,13 @@ class DesignationResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\Card::make([
+                    Forms\Components\TextInput::make("name")
+                        ->unique("designations","name",fn($record)=>$record)
+                        ->required(),
+                    Forms\Components\Textarea::make("description")
+                        ->nullable(),
+                ]),
 
             ]);
     }
