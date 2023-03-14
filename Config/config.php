@@ -20,6 +20,12 @@ return [
         'Employee'=>[
             'icon'=>'heroicon-o-user-group'
         ],
+        'Department'=>[
+            'icon'=>'heroicon-o-folder'
+        ],
+        'Designation'=>[
+            'icon'=>'heroicon-o-grid'
+        ],
         'Holiday'=>[
             'icon'=>'heroicon-o-clipboard-list'
         ],
