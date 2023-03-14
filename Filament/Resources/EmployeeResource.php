@@ -91,8 +91,17 @@ class EmployeeResource extends Resource
                                             ->unique("department","name",fn($record)=>$record)
                                             ->required(),
                                     ])->columns(2),
-                                ])
-                                ->required(),
+                                ]),
+                            Forms\Components\BelongsToSelect::make("designation")
+                                ->relationship("designation", "name")
+                                ->searchable()
+                                ->createOptionForm([
+                                    Forms\Components\Group::make([
+                                        Forms\Components\TextInput::make("name")
+                                            ->unique("designation","name",fn($record)=>$record)
+                                            ->required(),
+                                    ])->columns(2),
+                                ]),
                             Forms\Components\DatePicker::make("date_of_birth")
                                 ->required(),
                             Forms\Components\DatePicker::make("date_of_joining")
