@@ -20,4 +20,7 @@ class Department extends Model
     public function parent(): BelongsTo{
         return $this->belongsTo(self::class,'parent_id','id');
     }
+    public function company(): BelongsTo{
+        return $this->belongsTo(Company::class);
+    }
 }
