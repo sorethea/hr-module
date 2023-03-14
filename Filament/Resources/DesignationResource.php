@@ -16,8 +16,15 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class DesignationResource extends Resource
 {
     protected static ?string $model = Designation::class;
+    protected static function getNavigationIcon(): string
+    {
+        return config('hr.models.Designation.icon');
+    }
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static function getNavigationGroup(): ?string
+    {
+        return config('hr.hr-navigation.name');
+    }
 
     public static function form(Form $form): Form
     {
@@ -38,7 +45,8 @@ class DesignationResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make("name")->searchable(),
+                Tables\Columns\ToggleColumn::make("active"),
             ])
             ->filters([
                 //
