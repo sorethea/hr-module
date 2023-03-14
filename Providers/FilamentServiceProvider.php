@@ -7,6 +7,7 @@ use Filament\Navigation\NavigationGroup;
 use Filament\PluginServiceProvider;
 use Modules\HR\Filament\Pages\HRSettingPage;
 use Modules\HR\Filament\Resources\CompanyResource;
+use Modules\HR\Filament\Resources\DepartmentResource;
 use Modules\HR\Filament\Resources\EmployeeResource;
 use Modules\HR\Filament\Resources\HolidayResource;
 use Modules\HR\Filament\Resources\LeaveTypeResource;
@@ -27,6 +28,7 @@ class FilamentServiceProvider extends PluginServiceProvider
     protected array $resources =[
         CompanyResource::class,
         EmployeeResource::class,
+        DepartmentResource::class,
         HolidayResource::class,
         LeaveTypeResource::class,
     ];
