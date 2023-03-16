@@ -54,7 +54,7 @@ class DepartmentResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make("name")
                     ->searchable(),
-                Tables\Columns\TextColumn::make("company")
+                Tables\Columns\TextColumn::make("company.name")
                     ->searchable(),
                 Tables\Columns\BooleanColumn::make("is_group"),
                 Tables\Columns\ToggleColumn::make("active"),
