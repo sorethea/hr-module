@@ -3,7 +3,6 @@
         @php
             $user = \Filament\Facades\Filament::auth()->user();
         @endphp
-        {{-- Widget content --}}
         <div class="h-12 flex items-center space-x-4 rtl:space-x-reverse">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path d="M12 14l9-5-9-5-9 5 9 5z" />

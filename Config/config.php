@@ -4,7 +4,7 @@ return [
     'name' => 'HR',
     'setting'=>[
         'label'=>'Human Resources',
-        'icon'=>'heroicon-o-identification'
+        'icon'=>'heroicon-o-academic-cap'
     ],
     'resources'=>[
         "company"=>[
