@@ -6,5 +6,5 @@ use Filament\Widgets\Widget;
 
 class HRWidget extends Widget
 {
-    protected static string $view = 'filament.widgets.h-r-widget';
+    protected static string $view = 'hr::filament.widgets.h-r-widget';
 }
