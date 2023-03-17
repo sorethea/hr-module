@@ -6,6 +6,7 @@ use Filament\Widgets\AccountWidget;
 use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Support\ServiceProvider;
 use Modules\HR\Filament\Widgets\EmployeeWidget;
+use Modules\HR\Filament\Widgets\HRWidget;
 use Modules\HR\Filament\Widgets\LeaveWidget;
 
 class HRServiceProvider extends ServiceProvider
@@ -34,7 +35,7 @@ class HRServiceProvider extends ServiceProvider
         //$this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Settings'));
         \Lam::registerWidgets([
             EmployeeWidget::class,
-            //LeaveWidget::class,
+            HRWidget::class,
         ]);
     }
 
