@@ -8,7 +8,7 @@
             <x-hr::employee-avatar :user="$user" />
             <div>
                 <h2 class="text-lg sm:text-xl font-bold tracking-tight">
-                    {{ \Lam::getEmployeeName($user)}}
+                   Human Resources
                 </h2>
             </div>
         </div>
