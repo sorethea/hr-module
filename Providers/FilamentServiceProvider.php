@@ -22,7 +22,12 @@ class FilamentServiceProvider extends PluginServiceProvider
 {
     public function isEnabled(): bool{
         $module = \Module::find('hr');
-        return $module->isEnabled();
+        info($module->isEnabled());
+        if(!empty($module)){
+            return $module?->isEnabled();
+        }else{
+            return false;
+        }
     }
     protected array $pages = [
         HRSettingPage::class,
