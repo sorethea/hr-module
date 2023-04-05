@@ -21,8 +21,8 @@ class AuthServiceProvider extends ServiceProvider
 {
     protected $policies =[
         LeaveType::class => HRPolicy::class,
-        Company::class => CompanyPolicy::class,
-        Employee::class => EmployeePolicy::class,
+        Company::class => HRPolicy::class,
+        Employee::class => HRPolicy::class,
         Department::class => HRPolicy::class,
         Designation::class => HRPolicy::class,
         HRSetting::class => HRPolicy::class,
